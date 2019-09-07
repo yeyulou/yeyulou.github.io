@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="写下所得所感，记载下自己每个时间段的想法 一个天真的游戏制作者">
+<meta name="description" content="int x = 22; int y = 2; if (x &amp;gt;= 33 &amp;amp;&amp;amp; ++y &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLine(y); ouput：2  if (x &amp;gt;= 33 &amp;amp; y++ &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C sharp 布尔逻辑运算符">
+<meta property="og:title" content="C sharp 布尔逻辑运算符和位移，按位求补">
 <meta property="og:url" content="http://yoursite.com/2019/09/07/page/index.html">
 <meta property="og:site_name" content="Gamer World">
-<meta property="og:description" content="写下所得所感，记载下自己每个时间段的想法 一个天真的游戏制作者">
+<meta property="og:description" content="int x = 22; int y = 2; if (x &amp;gt;= 33 &amp;amp;&amp;amp; ++y &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLine(y); ouput：2  if (x &amp;gt;= 33 &amp;amp; y++ &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T13:45:20.927Z">
+<meta property="og:updated_time" content="2019-09-07T15:50:36.308Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C sharp 布尔逻辑运算符">
-<meta name="twitter:description" content="写下所得所感，记载下自己每个时间段的想法 一个天真的游戏制作者">
+<meta name="twitter:title" content="C sharp 布尔逻辑运算符和位移，按位求补">
+<meta name="twitter:description" content="int x = 22; int y = 2; if (x &amp;gt;= 33 &amp;amp;&amp;amp; ++y &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLine(y); ouput：2  if (x &amp;gt;= 33 &amp;amp; y++ &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLi">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>C sharp 布尔逻辑运算符 | Gamer World</title>
+  <title>C sharp 布尔逻辑运算符和位移，按位求补 | Gamer World</title>
   
 
 
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C sharp 布尔逻辑运算符</h1>
+          <h1 class="post-title" itemprop="name headline">C sharp 布尔逻辑运算符和位移，按位求补</h1>
         
 
         <div class="post-meta">
@@ -329,7 +329,141 @@
       
 
       
-        
+        <pre><code>int x = 22;
+int y = 2;
+if (x &gt;= 33 &amp;&amp; ++y &gt; 0)
+{
+    Console.WriteLine(y);
+}
+Console.WriteLine(y);
+ouput：2
+
+if (x &gt;= 33 &amp; y++ &gt; 0)
+{
+    Console.WriteLine(y);
+}
+Console.WriteLine(y);
+
+Console.ReadKey();
+output：3</code></pre><p>&amp;和&amp;&amp;区别，&amp;具有短路功能当第一个条件为假时第二个条件就不判断而&amp;继续执行y++,</p>
+<p>-布尔逻辑按位逻辑and &amp;就是按位与，需要判断2个值<br>-条件与 &amp;&amp;就是并且，表示同时满足&amp;&amp;前后的表达式或者值为真才执行<br>|和&amp;优先级高于&amp;&amp;和||，但&amp;&amp;效率相对于&amp;好点</p>
+<pre><code>p    q    p &amp; q    p | q    p ^ q
+0    0      0          0          0
+0    1      0          1          1
+1    1      1          1       0
+1    0      0          1       1</code></pre><p>假设如果 A = 60，且 B = 13，现在以二进制格式表示，它们如下所示：</p>
+<p>A = 0011 1100</p>
+<p>B = 0000 1101</p>
+<p>A&amp;B = 0000 1100</p>
+<p>A|B = 0011 1101</p>
+<p>A^B = 0011 0001</p>
+<p>~A  = 1100 0011</p>
+<pre><code> 运算符                                                             
+ &amp;    如果同时存在于两个操作数中，二进制 AND 运算符复制一位到结果中。    
+ |    如果存在于任一操作数中，二进制 OR 运算符复制一位到结果中。
+ ^    如果存在于其中一个操作数中但不同时存在于两个操作数中，二进制异或运算符复制一位到结果中。    
+ ~    按位取反运算符是一元运算符，具有&quot;翻转&quot;位效果，即0变成1，1变成0，包括符号位。    (~A ) 将得到 -61，即为 1100 0011，一个有符号二进制数的补码形式。
+&lt;&lt;    二进制左移运算符。左操作数的值向左移动右操作数指定的位数。    
+&gt;&gt;    二进制右移运算符。左操作数的值向右移动右操作数指定的位数。
+
+    int a = 60;            /* 60 = 0011 1100 */  
+    int b = 13;            /* 13 = 0000 1101 */
+    int c = 0;           
+
+     c = a &amp; b;           /* 12 = 0000 1100 */ 
+     Console.WriteLine(&quot;Line 1 - c 的值是 {0}&quot;, c );
+
+     c = a | b;           /* 61 = 0011 1101 */
+     Console.WriteLine(&quot;Line 2 - c 的值是 {0}&quot;, c);
+
+     c = a ^ b;           /* 49 = 0011 0001 */
+     Console.WriteLine(&quot;Line 3 - c 的值是 {0}&quot;, c);
+
+     c = ~a;               /*-61 = 1100 0011 */
+     Console.WriteLine(&quot;Line 4 - c 的值是 {0}&quot;, c);
+
+     c = a &lt;&lt; 2;     /* 240 = 1111 0000 */
+     Console.WriteLine(&quot;Line 5 - c 的值是 {0}&quot;, c);
+
+     c = a &gt;&gt; 2;     /* 15 = 0000 1111 */
+     Console.WriteLine(&quot;Line 6 - c 的值是 {0}&quot;, c);
+     Console.ReadLine();</code></pre><p>^ 逻辑XOR 在bool判断中和(不等运算符)!=相同  如果为true且false 或者 false且true为真（true）</p>
+<pre><code>Console.WriteLine(true ^ true);    // output: False
+Console.WriteLine(true ^ false);   // output: True
+Console.WriteLine(false ^ true);   // output: True
+Console.WriteLine(false ^ false);  // output: False</code></pre><p>bool？就是bool能为null   注意!!!!!!条件逻辑运算符 &amp;&amp; 和 || 不支持 bool? 操作数。</p>
+<pre><code>bool? test = null;
+Display(!test);         // output: null
+Display(test ^ false);  // output: null
+Display(test ^ null);   // output: null
+Display(true ^ null);   // output: null 
+
+void Display(bool? b) =&gt; Console.WriteLine(b is null ? &quot;null&quot; : b.Value.ToString());</code></pre><ul>
+<li>=  C=A+B</li>
+<li>+=  C=C+A</li>
+<li>-=C=C-A</li>
+<li><em>=C=C</em>A</li>
+<li>/=C=C/A</li>
+<li>%=C=C%A</li>
+<li>&lt;&lt;=C=C&lt;&lt;2</li>
+<li><blockquote>
+<blockquote>
+<p>=C=C&gt;&gt;2</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<p>&amp;=C=C&amp;2</p>
+</blockquote>
+</li>
+<li>^=C=C^2</li>
+<li>|=C=C|2</li>
+</ul>
+<ul>
+<li><p>sizeof()    返回数据类型的大小。    sizeof(int)，将返回 4.</p>
+</li>
+<li><p>typeof()    返回 class 的类型。    typeof(StreamReader);</p>
+</li>
+<li><p>&amp;    返回变量的地址。    &a; 将得到变量的实际地址。</p>
+</li>
+<li><ul>
+<li>变量的指针。    *a; 将指向一个变量。</li>
+</ul>
+</li>
+<li><p>? :    条件表达式    如果条件为真 ? 则为 X : 否则为 Y  2个类型必须相同</p>
+</li>
+<li><p>is    判断对象是否为某一类型。    If( Ford is Car) // 检查 Ford 是否是 Car 类的一个对象。</p>
+</li>
+<li><p>as    强制转换，即使转换失败也不会抛出异常。    Object obj = new StringReader(“Hello”);</p>
+</li>
+<li><p>StringReader r = obj as StringReader;1</p>
+<pre><code>/* sizeof 运算符的实例 */
+Console.WriteLine(&quot;int 的大小是 {0}&quot;, sizeof(int));
+Console.WriteLine(&quot;short 的大小是 {0}&quot;, sizeof(short));
+Console.WriteLine(&quot;double 的大小是 {0}&quot;, sizeof(double));
+
+/* 三元运算符的实例 */
+int a, b;
+a = 10;
+b = (a == 1) ? 20 : 30;
+Console.WriteLine(&quot;b 的值是 {0}&quot;, b);
+
+b = (a == 10) ? 20 : 30;
+//如果a==1则为20反之为30 a=10不等于1所以取30
+Console.WriteLine(&quot;b 的值是 {0}&quot;, b);
+Console.ReadLine();
+int 的大小是 4
+short 的大小是 2
+double 的大小是 8
+b 的值是 30
+b 的值是 20</code></pre></li>
+</ul>
+<hr>
+<h2 id="按位求补运算符-（也可用于析构函数具体请看析构函数blog）取相反-0变成1-1变成0也包含符号位（-）"><a href="#按位求补运算符-（也可用于析构函数具体请看析构函数blog）取相反-0变成1-1变成0也包含符号位（-）" class="headerlink" title="按位求补运算符 ~（也可用于析构函数具体请看析构函数blog）取相反 0变成1 1变成0也包含符号位（+  -）"></a>按位求补运算符 ~（也可用于析构函数具体请看析构函数blog）取相反 0变成1 1变成0也包含符号位（+  -）</h2><pre><code>uint a = 0b_0000_1111_0000_1111_0000_1111_0000_1100;
+uint b = ~a;
+Console.WriteLine(Convert.ToString(b, toBase: 2));
+// Output:
+// 11110000111100001110000111110011 </code></pre>
       
     </div>
     
@@ -413,8 +547,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#按位求补运算符-（也可用于析构函数具体请看析构函数blog）取相反-0变成1-1变成0也包含符号位（-）"><span class="nav-number">1.</span> <span class="nav-text">按位求补运算符 ~（也可用于析构函数具体请看析构函数blog）取相反 0变成1 1变成0也包含符号位（+  -）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
