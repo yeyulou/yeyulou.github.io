@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C#, Game">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="==和!=运算符可以用于null的类型，例:if ( x != null) y = x.value;     如果a和b均为null，则a==b的计算结果为true   优先级   var a=2+22,输出结果为6 因为其乘法的优先级, var a=(2+2)2输出为8  运算符的优先级可以去看微软自家表https://docs.microsoft.com/zh-cn/dotnet/csh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#运算符(operator) （尚有未完全理解）（已解决）">
+<meta property="og:url" content="http://yoursite.com/2019/09/05/C#operator/index.html">
+<meta property="og:site_name" content="Gamer World">
+<meta property="og:description" content="==和!=运算符可以用于null的类型，例:if ( x != null) y = x.value;     如果a和b均为null，则a==b的计算结果为true   优先级   var a=2+22,输出结果为6 因为其乘法的优先级, var a=(2+2)2输出为8  运算符的优先级可以去看微软自家表https://docs.microsoft.com/zh-cn/dotnet/csh">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-07T12:04:51.386Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C#运算符(operator) （尚有未完全理解）（已解决）">
+<meta name="twitter:description" content="==和!=运算符可以用于null的类型，例:if ( x != null) y = x.value;     如果a和b均为null，则a==b的计算结果为true   优先级   var a=2+22,输出结果为6 因为其乘法的优先级, var a=(2+2)2输出为8  运算符的优先级可以去看微软自家表https://docs.microsoft.com/zh-cn/dotnet/csh">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/05/C#operator/">
+
+
+
+
+
+  <title>C#运算符(operator) （尚有未完全理解）（已解决） | Gamer World</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gamer World</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/C#operator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="夜雨楼">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gamer World">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C#运算符(operator) （尚有未完全理解）（已解决）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-05T18:18:24+08:00">
+                2019-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+</blockquote>
+<ol>
+<li>==和!=运算符可以用于null的类型，例:if ( x != null) y = x.value;<blockquote>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>如果a和b均为null，则a==b的计算结果为true</li>
+</ul>
+<hr>
+<h2 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h2><blockquote>
+</blockquote>
+<ol>
+<li>var a=2+2<em>2,输出结果为6 因为其乘法的优先级, var a=(2+2)</em>2输出为8 </li>
+<li>运算符的优先级可以去看微软自家表<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/#code-try-0" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/#code-try-0</a></li>
+</ol>
+<hr>
+<h2 id="运算符结合性"><a href="#运算符结合性" class="headerlink" title="运算符结合性"></a>运算符结合性</h2><ol>
+<li><blockquote>
+<p>int a=13/5/2;  int b=13/(5/2);输出结果为 a=1;b=6</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<ol>
+<li>表达式   计算顺序</li>
+<li>a+b——–a,b,+</li>
+<li>a+b<em>c——–a,b,c,</em>,+</li>
+<li>a/b+c<em>d——–a,b,/,c,d,</em>,+</li>
+<li>a/(b+c)<em>d——–a,b,c,+,/,d,</em></li>
+</ol>
+<hr>
+<h2 id="增量运算符"><a href="#增量运算符" class="headerlink" title="增量运算符++"></a>增量运算符++</h2><ol>
+<li><p>一元增量运算符++按1递增其操作数，操作数必须是变量，属性访问或者索引器访问</p>
+</li>
+<li><p>增量运算符以两种形式进行支持:后缀增量运算符x++和前缀增量运算符++x</p>
+</li>
+<li></li>
+<li><ul>
+<li>x++的结果是此操作前的x的值，如以下示例所示:</li>
+</ul>
+</li>
+<li><p>-int i=3;</p>
+</li>
+<li><p>-console.writeline(i);—–输出3</p>
+</li>
+<li><p>-console.writeline(i++);—–输出3</p>
+</li>
+<li><p>-console.writeline(i);—–输出4</p>
+</li>
+<li><p>++x的结果是此操作后的x的值,如以下示例所示:</p>
+</li>
+<li><p>double a=1.5;</p>
+</li>
+<li><p>console.writeline(a);—–1.5</p>
+</li>
+<li><p>console.writeline(++a);—2.5</p>
+</li>
+<li><p>console.writeline(a);—–2.5</p>
+</li>
+</ol>
+<hr>
+<h2 id="减量运算符–"><a href="#减量运算符–" class="headerlink" title="减量运算符–"></a>减量运算符–</h2><ul>
+<li>减和加一样</li>
+</ul>
+<ol>
+<li>int i = 3;</li>
+<li>Console.WriteLine(i);   // output: 3</li>
+<li>Console.WriteLine(i–); // output: 3</li>
+<li>Console.WriteLine(i);   // output: 2</li>
+<li></li>
+<li>double a = 1.5;</li>
+<li>Console.WriteLine(a);   // output: 1.5</li>
+<li>Console.WriteLine(–a); // output: 0.5</li>
+<li>Console.WriteLine(a);   // output: 0.5</li>
+</ol>
+<hr>
+<h2 id="除法运算符"><a href="#除法运算符" class="headerlink" title="除法运算符/"></a>除法运算符/</h2><ul>
+<li>对于整数类型的操作数，/ 运算符的结果为整数类型，并且等于两个操作数之商向零舍入后的结果：</li>
+<li>Console.WriteLine(13 / 5);    // output: 2</li>
+<li>Console.WriteLine(-13 / 5);   // output: -2</li>
+<li>Console.WriteLine(13 / -5);   // output: -2</li>
+<li>Console.WriteLine(-13 / -5);  // output: 2</li>
+</ul>
+<ol>
+<li>-</li>
+<li><ul>
+<li>若要获取浮点数形式的两个操作数之商，请使用 float、double 或 decimal 类型：</li>
+</ul>
+</li>
+<li><ul>
+<li>Console.WriteLine(13 / 5.0);       // output: 2.6</li>
+</ul>
+</li>
+<li><ul>
+<li>int a = 13;</li>
+</ul>
+</li>
+<li><ul>
+<li>int b = 5;</li>
+</ul>
+</li>
+<li><ul>
+<li>Console.WriteLine((double)a / b);  // output: 2.6</li>
+</ul>
+</li>
+<li></li>
+<li>对于 float、double 和 decimal 类型，/ 运算符的结果为两个操作数之商：</li>
+<li>Console.WriteLine(16.8f / 4.1f);   // output: 4.097561</li>
+<li>Console.WriteLine(16.8d / 4.1d);   // output: 4.09756097560976</li>
+<li>Console.WriteLine(16.8m / 4.1m);   // output: 4.0975609756097560975609756098</li>
+<li>如果一个操作数为decimal另一个数不能为float和double 这2个不能隐式转化为decimal 必须将float</li>
+<li>和double显示转换为decimal</li>
+</ol>
+<hr>
+<h2 id="余数运算符"><a href="#余数运算符" class="headerlink" title="余数运算符%"></a>余数运算符%</h2><ul>
+<li>对于整数类型的操作数，a % b 的结果是 a (a / b) * b 得出的值。 非零余数的符号与左侧操作数的符号相同，如下例所示：</li>
+<li>Console.WriteLine(5 % 4);   // output: 1</li>
+<li>Console.WriteLine(5 % -4);  // output: 1</li>
+<li>Console.WriteLine(-5 % 4);  // output: -1</li>
+<li>Console.WriteLine(-5 % -4); // output: -1</li>
+</ul>
+<hr>
+<h2 id="复合赋值"><a href="#复合赋值" class="headerlink" title="复合赋值"></a>复合赋值</h2><p>二元运算符结合  x= x op y 等同与x op =y<br>int a = 5;<br>a += 9;<br>Console.WriteLine(a);  // output: 14</p>
+<p>a -= 4;<br>Console.WriteLine(a);  // output: 10</p>
+<p>a *= 2;<br>Console.WriteLine(a);  // output: 20</p>
+<p>a /= 4;<br>Console.WriteLine(a);  // output: 5</p>
+<p>a %= 3;<br>Console.WriteLine(a);  // output: 2</p>
+<ul>
+<li><p>byte a = 200;</p>
+</li>
+<li><p>byte b = 100;</p>
+</li>
+<li><p>var c = a + b;</p>
+</li>
+<li><p>Console.WriteLine(c.GetType());  // output: System.Int32</p>
+</li>
+<li><p>Console.WriteLine(c);  // output: 300</p>
+</li>
+<li><p>a += b;</p>
+</li>
+<li><p>Console.WriteLine(a); // output: 44未完全理解</p>
+</li>
+<li><p>byte范围是-128到127  表示256个数</p>
+</li>
+<li><p>隐式转换一般是低类型向高类型转化，能够保证值不发生变化</p>
+</li>
+<li><p>显示转换：也称强制类型转换。不能保证数据的正确性。<br>var类型必须初始化并赋值，之后不能更改，只能是局部变量，返回其他类型不能使用var，比object高效点，byte由8位无符号整数转化为var32位有符号整数数值产生变化，由此300变成44，以后继续补充（byte整数范围为255，数据溢出所以300-255=45，又因为有符号整数少一位45-1=44，）</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/03/Start/" rel="next" title="Start">
+                <i class="fa fa-chevron-left"></i> Start
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">夜雨楼</p>
+              <p class="site-description motion-element" itemprop="description">写下所得所感，记载下自己每个时间段的想法 一个天真的游戏制作者</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级"><span class="nav-number">1.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符结合性"><span class="nav-number">2.</span> <span class="nav-text">运算符结合性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增量运算符"><span class="nav-number">3.</span> <span class="nav-text">增量运算符++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减量运算符–"><span class="nav-number">4.</span> <span class="nav-text">减量运算符–</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除法运算符"><span class="nav-number">5.</span> <span class="nav-text">除法运算符/</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#余数运算符"><span class="nav-number">6.</span> <span class="nav-text">余数运算符%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合赋值"><span class="nav-number">7.</span> <span class="nav-text">复合赋值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夜雨楼</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
