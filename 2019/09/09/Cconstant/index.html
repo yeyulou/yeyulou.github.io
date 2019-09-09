@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="int x = 22; int y = 2; if (x &amp;gt;= 33 &amp;amp;&amp;amp; ++y &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLine(y); ouput：2  if (x &amp;gt;= 33 &amp;amp; y++ &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLi">
+<meta name="description" content="变量是供程序操作的存储区的名字 整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char 浮点型    float 和 double 十进制类型    decimal 布尔类型    true 或 false 值，指定的值 空类型    可为空值的数据类型C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量 常量是固定的不能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C sharp 布尔逻辑运算符和位移，按位求补">
-<meta property="og:url" content="http://yoursite.com/2019/09/07/page/index.html">
+<meta property="og:title" content="Gamer World">
+<meta property="og:url" content="http://yoursite.com/2019/09/09/Cconstant/index.html">
 <meta property="og:site_name" content="Gamer World">
-<meta property="og:description" content="int x = 22; int y = 2; if (x &amp;gt;= 33 &amp;amp;&amp;amp; ++y &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLine(y); ouput：2  if (x &amp;gt;= 33 &amp;amp; y++ &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLi">
+<meta property="og:description" content="变量是供程序操作的存储区的名字 整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char 浮点型    float 和 double 十进制类型    decimal 布尔类型    true 或 false 值，指定的值 空类型    可为空值的数据类型C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量 常量是固定的不能">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T15:50:36.308Z">
+<meta property="og:updated_time" content="2019-09-09T14:16:40.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C sharp 布尔逻辑运算符和位移，按位求补">
-<meta name="twitter:description" content="int x = 22; int y = 2; if (x &amp;gt;= 33 &amp;amp;&amp;amp; ++y &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLine(y); ouput：2  if (x &amp;gt;= 33 &amp;amp; y++ &amp;gt; 0) {     Console.WriteLine(y); } Console.WriteLi">
+<meta name="twitter:title" content="Gamer World">
+<meta name="twitter:description" content="变量是供程序操作的存储区的名字 整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char 浮点型    float 和 double 十进制类型    decimal 布尔类型    true 或 false 值，指定的值 空类型    可为空值的数据类型C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量 常量是固定的不能">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/07/page/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/09/Cconstant/">
 
 
 
 
 
-  <title>C sharp 布尔逻辑运算符和位移，按位求补 | Gamer World</title>
+  <title> | Gamer World</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/page/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/Cconstant/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夜雨楼">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C sharp 布尔逻辑运算符和位移，按位求补</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-07T21:38:50+08:00">
-                2019-09-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T21:46:31+08:00">
+                2019-09-09
               </time>
             
 
@@ -329,141 +329,185 @@
       
 
       
-        <pre><code>int x = 22;
-int y = 2;
-if (x &gt;= 33 &amp;&amp; ++y &gt; 0)
+        <p>变量是供程序操作的存储区的名字</p>
+<pre><code>整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char
+浮点型    float 和 double
+十进制类型    decimal
+布尔类型    true 或 false 值，指定的值
+空类型    可为空值的数据类型</code></pre><p>C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量</p>
+<p>常量是固定的不能变更，常量是可以任何数据类型</p>
+<pre><code> using System;
+
+ public class ConstTest 
 {
-    Console.WriteLine(y);
-}
-Console.WriteLine(y);
-ouput：2
-
-if (x &gt;= 33 &amp; y++ &gt; 0)
+class SampleClass
 {
-    Console.WriteLine(y);
+    public int x;
+    public int y;
+    public const int c1 = 5;
+    public const int c2 = c1 + 5;
+
+    public SampleClass(int p1, int p2) 
+    {
+        x = p1; 
+        y = p2;
+    }
 }
-Console.WriteLine(y);
 
-Console.ReadKey();
-output：3</code></pre><p>&amp;和&amp;&amp;区别，&amp;具有短路功能当第一个条件为假时第二个条件就不判断而&amp;继续执行y++,</p>
-<p>-布尔逻辑按位逻辑and &amp;就是按位与，需要判断2个值<br>-条件与 &amp;&amp;就是并且，表示同时满足&amp;&amp;前后的表达式或者值为真才执行<br>|和&amp;优先级高于&amp;&amp;和||，但&amp;&amp;效率相对于&amp;好点</p>
-<pre><code>p    q    p &amp; q    p | q    p ^ q
-0    0      0          0          0
-0    1      0          1          1
-1    1      1          1       0
-1    0      0          1       1</code></pre><p>假设如果 A = 60，且 B = 13，现在以二进制格式表示，它们如下所示：</p>
-<p>A = 0011 1100</p>
-<p>B = 0000 1101</p>
-<p>A&amp;B = 0000 1100</p>
-<p>A|B = 0011 1101</p>
-<p>A^B = 0011 0001</p>
-<p>~A  = 1100 0011</p>
-<pre><code> 运算符                                                             
- &amp;    如果同时存在于两个操作数中，二进制 AND 运算符复制一位到结果中。    
- |    如果存在于任一操作数中，二进制 OR 运算符复制一位到结果中。
- ^    如果存在于其中一个操作数中但不同时存在于两个操作数中，二进制异或运算符复制一位到结果中。    
- ~    按位取反运算符是一元运算符，具有&quot;翻转&quot;位效果，即0变成1，1变成0，包括符号位。    (~A ) 将得到 -61，即为 1100 0011，一个有符号二进制数的补码形式。
-&lt;&lt;    二进制左移运算符。左操作数的值向左移动右操作数指定的位数。    
-&gt;&gt;    二进制右移运算符。左操作数的值向右移动右操作数指定的位数。
+static void Main()
+{
+    SampleClass mC = new SampleClass(11, 22);
+    Console.WriteLine(&quot;x = {0}, y = {1}&quot;, mC.x, mC.y);
+    Console.WriteLine(&quot;c1 = {0}, c2 = {1}&quot;, 
+                      SampleClass.c1, SampleClass.c2);
+}
+ }
+ output:
 
-    int a = 60;            /* 60 = 0011 1100 */  
-    int b = 13;            /* 13 = 0000 1101 */
-    int c = 0;           
+ x = 11, y = 22
+ c1 = 5, c2 = 10</code></pre><hr>
+<p>判断语句</p>
+<p>if else<br>if else if    else if   else</p>
+<p>当一个条件为真时其他不执行，最后一个所有条件都不满足执行</p>
+<pre><code>/* 局部变量定义 */
+      int a = 100;
 
-     c = a &amp; b;           /* 12 = 0000 1100 */ 
-     Console.WriteLine(&quot;Line 1 - c 的值是 {0}&quot;, c );
+      /* 检查布尔条件 */
+      if (a == 10)
+      {
+          /* 如果 if 条件为真，则输出下面的语句 */
+          Console.WriteLine(&quot;a 的值是 10&quot;);
+      }
+      else if (a == 20)
+      {
+          /* 如果 else if 条件为真，则输出下面的语句 */
+          Console.WriteLine(&quot;a 的值是 20&quot;);
+      }
+      else if (a == 30)
+      {
+          /* 如果 else if 条件为真，则输出下面的语句 */
+          Console.WriteLine(&quot;a 的值是 30&quot;);
+      }
+      else
+      {
+          /* 如果上面条件都不为真，则输出下面的语句 */
+          Console.WriteLine(&quot;没有匹配的值&quot;);
+      }
+      Console.WriteLine(&quot;a 的准确值是 {0}&quot;, a);
+      Console.ReadLine();
 
-     c = a | b;           /* 61 = 0011 1101 */
-     Console.WriteLine(&quot;Line 2 - c 的值是 {0}&quot;, c);
+      output:
+      没有匹配的值
+      a 的准确值是 100</code></pre><hr>
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><pre><code>/* 局部变量定义 */
+char grade = &apos;B&apos;;
 
-     c = a ^ b;           /* 49 = 0011 0001 */
-     Console.WriteLine(&quot;Line 3 - c 的值是 {0}&quot;, c);
-
-     c = ~a;               /*-61 = 1100 0011 */
-     Console.WriteLine(&quot;Line 4 - c 的值是 {0}&quot;, c);
-
-     c = a &lt;&lt; 2;     /* 240 = 1111 0000 */
-     Console.WriteLine(&quot;Line 5 - c 的值是 {0}&quot;, c);
-
-     c = a &gt;&gt; 2;     /* 15 = 0000 1111 */
-     Console.WriteLine(&quot;Line 6 - c 的值是 {0}&quot;, c);
-     Console.ReadLine();</code></pre><p>^ 逻辑XOR 在bool判断中和(不等运算符)!=相同  如果为true且false 或者 false且true为真（true）</p>
-<pre><code>Console.WriteLine(true ^ true);    // output: False
-Console.WriteLine(true ^ false);   // output: True
-Console.WriteLine(false ^ true);   // output: True
-Console.WriteLine(false ^ false);  // output: False</code></pre><p>bool？就是bool能为null   注意!!!!!!条件逻辑运算符 &amp;&amp; 和 || 不支持 bool? 操作数。</p>
-<pre><code>bool? test = null;
-Display(!test);         // output: null
-Display(test ^ false);  // output: null
-Display(test ^ null);   // output: null
-Display(true ^ null);   // output: null 
-
-void Display(bool? b) =&gt; Console.WriteLine(b is null ? &quot;null&quot; : b.Value.ToString());</code></pre><ul>
-<li>=  C=A+B</li>
-<li>+=  C=C+A</li>
-<li>-=C=C-A</li>
-<li><em>=C=C</em>A</li>
-<li>/=C=C/A</li>
-<li>%=C=C%A</li>
-<li>&lt;&lt;=C=C&lt;&lt;2</li>
-<li><blockquote>
-<blockquote>
-<p>=C=C&gt;&gt;2</p>
-</blockquote>
-</blockquote>
-</li>
-<li><blockquote>
-<p>&amp;=C=C&amp;2</p>
-</blockquote>
-</li>
-<li>^=C=C^2</li>
-<li>|=C=C|2</li>
-</ul>
-<ul>
-<li><p>sizeof()    返回数据类型的大小。    sizeof(int)，将返回 4.</p>
-</li>
-<li><p>typeof()    返回 class 的类型。    typeof(StreamReader);</p>
-</li>
-<li><p>&amp;    返回变量的地址。    &a; 将得到变量的实际地址。</p>
-</li>
-<li><ul>
-<li>变量的指针。    *a; 将指向一个变量。</li>
-</ul>
-</li>
-<li><p>? :    条件表达式    如果条件为真 ? 则为 X : 否则为 Y  2个类型必须相同</p>
-</li>
-<li><p>is    判断对象是否为某一类型。    If( Ford is Car) // 检查 Ford 是否是 Car 类的一个对象。</p>
-</li>
-<li><p>as    强制转换，即使转换失败也不会抛出异常。    Object obj = new StringReader(“Hello”);</p>
-</li>
-<li><p>StringReader r = obj as StringReader;1</p>
-<pre><code>/* sizeof 运算符的实例 */
-Console.WriteLine(&quot;int 的大小是 {0}&quot;, sizeof(int));
-Console.WriteLine(&quot;short 的大小是 {0}&quot;, sizeof(short));
-Console.WriteLine(&quot;double 的大小是 {0}&quot;, sizeof(double));
-
-/* 三元运算符的实例 */
-int a, b;
-a = 10;
-b = (a == 1) ? 20 : 30;
-Console.WriteLine(&quot;b 的值是 {0}&quot;, b);
-
-b = (a == 10) ? 20 : 30;
-//如果a==1则为20反之为30 a=10不等于1所以取30
-Console.WriteLine(&quot;b 的值是 {0}&quot;, b);
+switch (grade)
+{
+    case &apos;A&apos;:
+        Console.WriteLine(&quot;很棒！&quot;);
+        break;
+    case &apos;B&apos;:
+    case &apos;C&apos;:
+        Console.WriteLine(&quot;做得好&quot;);
+        break;
+    case &apos;D&apos;:
+        Console.WriteLine(&quot;您通过了&quot;);
+        break;
+    case &apos;F&apos;:
+        Console.WriteLine(&quot;最好再试一下&quot;);
+        break;
+    default:
+        Console.WriteLine(&quot;无效的成绩&quot;);
+        break;
+}
+Console.WriteLine(&quot;您的成绩是 {0}&quot;, grade);
 Console.ReadLine();
-int 的大小是 4
-short 的大小是 2
-double 的大小是 8
-b 的值是 30
-b 的值是 20</code></pre></li>
-</ul>
-<hr>
-<h2 id="按位求补运算符-（也可用于析构函数具体请看析构函数blog）取相反-0变成1-1变成0也包含符号位（-）"><a href="#按位求补运算符-（也可用于析构函数具体请看析构函数blog）取相反-0变成1-1变成0也包含符号位（-）" class="headerlink" title="按位求补运算符 ~（也可用于析构函数具体请看析构函数blog）取相反 0变成1 1变成0也包含符号位（+  -）"></a>按位求补运算符 ~（也可用于析构函数具体请看析构函数blog）取相反 0变成1 1变成0也包含符号位（+  -）</h2><pre><code>uint a = 0b_0000_1111_0000_1111_0000_1111_0000_1100;
-uint b = ~a;
-Console.WriteLine(Convert.ToString(b, toBase: 2));
-// Output:
-// 11110000111100001110000111110011 </code></pre>
+output:
+做得好
+您的成绩是 B</code></pre><hr>
+<p>循环</p>
+<p>while循环<br>         /* 局部变量定义 */<br>            int a = 10;</p>
+<pre><code>/* while 循环执行 */
+while (a &lt; 20)
+{
+    Console.WriteLine(&quot;a 的值： {0}&quot;, a);
+    a++;
+}
+Console.ReadLine();
+output:
+a的值一直从10到19</code></pre><p>for循环</p>
+<pre><code>/* for 循环执行 */
+for (int a = 10; a &lt; 20; a = a + 1)
+{
+    Console.WriteLine(&quot;a 的值： {0}&quot;, a);
+}
+Console.ReadLine();
+a的值从10到19</code></pre><p>for循环一开始主体条件可以不用写 直接 for(;;)</p>
+<p>foreach<br>可以迭代数组或者集合对象</p>
+<pre><code>   int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
+   foreach (int element in fibarray)//依次迭代数组内的整型，迭代一次执行一次循环语句
+   {
+       System.Console.WriteLine(element);//每次循环需要执行的内容
+   }
+   System.Console.WriteLine();
+
+
+   // 类似 foreach 循环
+   for (int i = 0; i &lt; fibarray.Length; i++)//确定i的值
+   {
+       System.Console.WriteLine(fibarray[i]);//输出数组中第i个值
+   }
+   System.Console.WriteLine();
+
+
+   // 设置集合中元素的计算器
+   int count = 0;
+   foreach (int element in fibarray)
+   {
+       count += 1;
+       System.Console.WriteLine(&quot;Element #{0}: {1}&quot;, count, element);//count值反映了循环主体的执行次数，从1开始代表了数组中第一个整型，依次往后
+   }
+   System.Console.WriteLine(&quot;Number of elements in the array: {0}&quot;, count);
+
+   output:
+0
+1
+1
+2
+3
+5
+8
+13
+
+0
+1
+1
+2
+3
+5
+8
+13
+Element #1: 0
+Element #2: 1
+Element #3: 1
+Element #4: 2
+Element #5: 3
+Element #6: 5
+Element #7: 8
+Element #8: 13
+Number of elements in the array: 8</code></pre><p>do while循环 条件在结尾只有条件为假时才会停止</p>
+<pre><code>/* 局部变量定义 */
+int a = 10;
+
+/* do 循环执行 */
+do
+{
+   Console.WriteLine(&quot;a 的值： {0}&quot;, a);
+    a = a + 1;
+} while (a &lt; 20);
+
+Console.ReadLine();</code></pre>
       
     </div>
     
@@ -487,8 +531,8 @@ Console.WriteLine(Convert.ToString(b, toBase: 2));
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/06/C#/" rel="next" title="C sharp net（值类型/值类型/指针)(指针请看单章)">
-                <i class="fa fa-chevron-left"></i> C sharp net（值类型/值类型/指针)(指针请看单章)
+              <a href="/2019/09/07/page/" rel="next" title="C sharp 布尔逻辑运算符和位移，按位求补">
+                <i class="fa fa-chevron-left"></i> C sharp 布尔逻辑运算符和位移，按位求补
               </a>
             
           </div>
@@ -496,10 +540,6 @@ Console.WriteLine(Convert.ToString(b, toBase: 2));
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/09/Cconstant/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -625,7 +665,7 @@ Console.WriteLine(Convert.ToString(b, toBase: 2));
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#按位求补运算符-（也可用于析构函数具体请看析构函数blog）取相反-0变成1-1变成0也包含符号位（-）"><span class="nav-number">1.</span> <span class="nav-text">按位求补运算符 ~（也可用于析构函数具体请看析构函数blog）取相反 0变成1 1变成0也包含符号位（+  -）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#switch语句"><span class="nav-number">1.</span> <span class="nav-text">switch语句</span></a></li></ol></div>
             
 
           </div>

@@ -81,14 +81,14 @@
 
 <meta name="description" content="我们写的代码经过编译产生程序集让实现，差不多就是记事本经过编译器然后产生程序集(包含CIL公告中间语言) 然后程序集通过JIT编译器在CLR公共语言运行库产生本机代码然后操作系统服务，写的代码就是指令， CLR叫做运行环境 C#源文件经过编译器变成程序集(包含CIL公共中间语言)然后经过JIT变成本机代码 CLR非托管代码非.net程序不再CLR控制之下，比如win32C/C++DLL称为非托管代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C sharp net">
+<meta property="og:title" content="C sharp net（值类型&#x2F;值类型&#x2F;指针)(指针请看单章)">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/C#/index.html">
 <meta property="og:site_name" content="Gamer World">
 <meta property="og:description" content="我们写的代码经过编译产生程序集让实现，差不多就是记事本经过编译器然后产生程序集(包含CIL公告中间语言) 然后程序集通过JIT编译器在CLR公共语言运行库产生本机代码然后操作系统服务，写的代码就是指令， CLR叫做运行环境 C#源文件经过编译器变成程序集(包含CIL公共中间语言)然后经过JIT变成本机代码 CLR非托管代码非.net程序不再CLR控制之下，比如win32C/C++DLL称为非托管代">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T13:46:23.438Z">
+<meta property="og:updated_time" content="2019-09-09T14:05:19.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C sharp net">
+<meta name="twitter:title" content="C sharp net（值类型&#x2F;值类型&#x2F;指针)(指针请看单章)">
 <meta name="twitter:description" content="我们写的代码经过编译产生程序集让实现，差不多就是记事本经过编译器然后产生程序集(包含CIL公告中间语言) 然后程序集通过JIT编译器在CLR公共语言运行库产生本机代码然后操作系统服务，写的代码就是指令， CLR叫做运行环境 C#源文件经过编译器变成程序集(包含CIL公共中间语言)然后经过JIT变成本机代码 CLR非托管代码非.net程序不再CLR控制之下，比如win32C/C++DLL称为非托管代">
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>C sharp net | Gamer World</title>
+  <title>C sharp net（值类型/值类型/指针)(指针请看单章) | Gamer World</title>
   
 
 
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C sharp net</h1>
+          <h1 class="post-title" itemprop="name headline">C sharp net（值类型/值类型/指针)(指针请看单章)</h1>
         
 
         <div class="post-meta">
@@ -336,7 +336,93 @@
 <p>CLR<br>非托管代码<br>非.net程序<br>不再CLR控制之下，比如win32C/C++DLL称为非托管代码</p>
 <p>托管代码变成程序集到CLR(公共语言运行库)环境中然后操作系统<br>CLR包含啥呢，假如定义了变量要申请内存的然后内存管理，异常处理,垃圾收集，类加载器，反射服务，JIT编译器</p>
 <p>泛型 LINQ 命名参数和可选参数 异步</p>
+<hr>
+<h2 id="值类型-由sytem-valuetype派生"><a href="#值类型-由sytem-valuetype派生" class="headerlink" title="值类型 ##由sytem.valuetype派生"></a>值类型 ##由sytem.valuetype派生</h2><pre><code>类型        描述                          范围                                                   默认值
+bool    布尔值                      True 或 False                                                False
+byte    8 位无符号整数             0 到 255                                                    0
+char    16 位 Unicode 字符          U +0000 到 U +ffff                                            &apos;\0&apos;
+decimal    128 位精确的十进制值，    28-29 有效位数    (-7.9 x 1028 到 7.9 x 1028) / 100 到 28         0.0M
+double    64 位双精度浮点型          (+/-)5.0 x 10-324 到 (+/-)1.7 x 10308                          0.0D
+float    32 位单精度浮点型          -3.4 x 1038 到 + 3.4 x 1038                                  0.0F
+int        32 位有符号整数类型         -2,147,483,648 到 2,147,483,647                               0
+long    64 位有符号整数类型         -9,223,372,036,854,775,808 到 9,223,372,036,854,775,807          0L
+sbyte    8 位有符号整数类型         -128 到 127                                                      0
+short    16 位有符号整数类型         -32,768 到 32,767                                              0
+uint    32 位无符号整数类型         0 到 4,294,967,295                                              0
+ulong    64 位无符号整数类型         0 到 18,446,744,073,709,551,615                                  0
+ushort    16 位无符号整数类型         0 到 65,535                                                      0</code></pre><hr>
+<p>引用类型指向是内存位置（object,dynamic,string）<br>对象（object类型）所有类型基类</p>
+<h2 id="值类型转化为对象类型称为装箱，对象类型转化为值类型为拆箱"><a href="#值类型转化为对象类型称为装箱，对象类型转化为值类型为拆箱" class="headerlink" title="值类型转化为对象类型称为装箱，对象类型转化为值类型为拆箱"></a>值类型转化为对象类型称为装箱，对象类型转化为值类型为拆箱</h2><pre><code>object obj;
+obj = 100; // 装箱</code></pre><p>动态（Dynamic）类型</p>
+<p>字符串（string）</p>
+<pre><code>string str = @&quot;C:\Windows&quot;;
+string str = &quot;C:\\Windows&quot;;</code></pre><hr>
+<h2 id="指针类型（Pointer-types）（待补充）"><a href="#指针类型（Pointer-types）（待补充）" class="headerlink" title="指针类型（Pointer types）（待补充）"></a>指针类型（Pointer types）（待补充）</h2><p>指针类型变量存储另一种类型的内存地址 </p>
+<pre><code>type*identifier;
+例:
+char* cptr;
+int* iptr;</code></pre><hr>
+<p>隐式类型转换<br>显示类型转换</p>
+<pre><code>double d = 5673.74;
+int i;
 
+// 强制转换 double 为 int
+i = (int)d;
+Console.WriteLine(i);
+Console.ReadKey();
+
+output:5673</code></pre><p>类型转换</p>
+<pre><code>序号     方法 &amp; 描述
+1    ToBoolean
+如果可能的话，把类型转换为布尔型。
+2    ToByte
+把类型转换为字节类型。
+3    ToChar
+如果可能的话，把类型转换为单个 Unicode 字符类型。
+4    ToDateTime
+把类型（整数或字符串类型）转换为 日期-时间 结构。
+5    ToDecimal
+把浮点型或整数类型转换为十进制类型。
+6    ToDouble
+把类型转换为双精度浮点型。
+7    ToInt16
+把类型转换为 16 位整数类型。
+8    ToInt32
+把类型转换为 32 位整数类型。
+9    ToInt64
+把类型转换为 64 位整数类型。
+10    ToSbyte
+把类型转换为有符号字节类型。
+11    ToSingle
+把类型转换为小浮点数类型。
+12    ToString
+把类型转换为字符串类型。
+13    ToType
+把类型转换为指定类型。
+14    ToUInt16
+把类型转换为 16 位无符号整数类型。
+15    ToUInt32
+把类型转换为 32 位无符号整数类型。
+16    ToUInt64
+把类型转换为 64 位无符号整数类型。
+
+
+        int i = 75;
+        float f = 53.005f;
+        double d = 2345.7652;
+        bool b = true;
+
+        Console.WriteLine(i.ToString());
+        Console.WriteLine(f.ToString());
+        Console.WriteLine(d.ToString());
+        Console.WriteLine(b.ToString());
+        Console.ReadKey();
+
+        output:
+        75
+        53.005
+        2345.7652
+        True</code></pre>
       
     </div>
     
@@ -424,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -442,7 +537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -479,6 +574,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#值类型-由sytem-valuetype派生"><span class="nav-number">1.</span> <span class="nav-text">值类型 ##由sytem.valuetype派生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#值类型转化为对象类型称为装箱，对象类型转化为值类型为拆箱"><span class="nav-number">2.</span> <span class="nav-text">值类型转化为对象类型称为装箱，对象类型转化为值类型为拆箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针类型（Pointer-types）（待补充）"><span class="nav-number">3.</span> <span class="nav-text">指针类型（Pointer types）（待补充）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
