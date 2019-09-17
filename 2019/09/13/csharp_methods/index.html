@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="我们写的代码经过编译产生程序集让实现，差不多就是记事本经过编译器然后产生程序集(包含CIL公告中间语言) 然后程序集通过JIT编译器在CLR公共语言运行库产生本机代码然后操作系统服务，写的代码就是指令， CLR叫做运行环境 C#源文件经过编译器变成程序集(包含CIL公共中间语言)然后经过JIT变成本机代码 CLR非托管代码非.net程序不再CLR控制之下，比如win32C/C++DLL称为非托管代">
+<meta name="description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C sharp net（值类型&#x2F;值类型&#x2F;指针)(指针请看单章)">
-<meta property="og:url" content="http://yoursite.com/2019/09/09/Csharpnet/index.html">
+<meta property="og:title" content="csharp:方法（递归）">
+<meta property="og:url" content="http://yoursite.com/2019/09/13/csharp_methods/index.html">
 <meta property="og:site_name" content="Gamer World">
-<meta property="og:description" content="我们写的代码经过编译产生程序集让实现，差不多就是记事本经过编译器然后产生程序集(包含CIL公告中间语言) 然后程序集通过JIT编译器在CLR公共语言运行库产生本机代码然后操作系统服务，写的代码就是指令， CLR叫做运行环境 C#源文件经过编译器变成程序集(包含CIL公共中间语言)然后经过JIT变成本机代码 CLR非托管代码非.net程序不再CLR控制之下，比如win32C/C++DLL称为非托管代">
+<meta property="og:description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-09T14:39:18.864Z">
+<meta property="og:updated_time" content="2019-09-17T13:29:58.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C sharp net（值类型&#x2F;值类型&#x2F;指针)(指针请看单章)">
-<meta name="twitter:description" content="我们写的代码经过编译产生程序集让实现，差不多就是记事本经过编译器然后产生程序集(包含CIL公告中间语言) 然后程序集通过JIT编译器在CLR公共语言运行库产生本机代码然后操作系统服务，写的代码就是指令， CLR叫做运行环境 C#源文件经过编译器变成程序集(包含CIL公共中间语言)然后经过JIT变成本机代码 CLR非托管代码非.net程序不再CLR控制之下，比如win32C/C++DLL称为非托管代">
+<meta name="twitter:title" content="csharp:方法（递归）">
+<meta name="twitter:description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/09/Csharpnet/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/13/csharp_methods/">
 
 
 
 
 
-  <title>C sharp net（值类型/值类型/指针)(指针请看单章) | Gamer World</title>
+  <title>csharp:方法（递归） | Gamer World</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/Csharpnet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/csharp_methods/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夜雨楼">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C sharp net（值类型/值类型/指针)(指针请看单章)</h1>
+          <h1 class="post-title" itemprop="name headline">csharp:方法（递归）</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T22:39:18+08:00">
-                2019-09-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T15:16:16+08:00">
+                2019-09-13
               </time>
             
 
@@ -311,8 +311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/09/Csharpnet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/09/Csharpnet/" itemprop="commentsCount"></span>
+                <a href="/2019/09/13/csharp_methods/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/13/csharp_methods/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -340,101 +340,235 @@
       
 
       
-        <p>我们写的代码经过编译产生程序集让实现，差不多就是记事本经过编译器然后产生程序集(包含CIL公告中间语言)</p>
-<p>然后程序集通过JIT编译器在CLR公共语言运行库产生本机代码然后操作系统服务，写的代码就是指令，</p>
-<p>CLR叫做运行环境</p>
-<p>C#源文件经过编译器变成程序集(包含CIL公共中间语言)然后经过JIT变成本机代码</p>
-<p>CLR<br>非托管代码<br>非.net程序<br>不再CLR控制之下，比如win32C/C++DLL称为非托管代码</p>
-<p>托管代码变成程序集到CLR(公共语言运行库)环境中然后操作系统<br>CLR包含啥呢，假如定义了变量要申请内存的然后内存管理，异常处理,垃圾收集，类加载器，反射服务，JIT编译器</p>
-<p>泛型 LINQ 命名参数和可选参数 异步</p>
+        <pre><code>    public int FindMax(int num1, int num2)
+{
+   /* 局部变量声明 */
+   int result;
+
+   if (num1 &gt; num2)
+      result = num1;
+   else
+      result = num2;
+
+   return result;
+}
+static void Main(string[] args)
+{
+   /* 局部变量定义 */
+   int a = 100;
+   int b = 200;
+   int ret;
+   NumberManipulator n = new NumberManipulator();
+
+   //调用 FindMax 方法
+   ret = n.FindMax(a, b);
+   Console.WriteLine(&quot;最大值是： {0}&quot;, ret );
+   Console.ReadLine();
+}
+output:200</code></pre><p>方法也可以从另一个类调用</p>
+<h2 id="需要先实例化类然后调用类中的方法进行比较然后传递给ret"><a href="#需要先实例化类然后调用类中的方法进行比较然后传递给ret" class="headerlink" title="需要先实例化类然后调用类中的方法进行比较然后传递给ret"></a>需要先实例化类然后调用类中的方法进行比较然后传递给ret</h2><p>一个方法可以自己调用自己就是递归(乘阶就是从指定数1乘到本身，3（1<em>2</em>3）)<br>          class NumberManipulator<br>    {<br>        public int factorial(int num)<br>        {<br>            /* 局部变量定义 */<br>            int result;</p>
+<pre><code>    if (num == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        result = factorial(num - 1) * num;
+        return result;
+    }
+}
+
+static void Main(string[] args)
+{
+    NumberManipulator n = new NumberManipulator();
+    //调用 factorial 方法
+    Console.WriteLine(&quot;6 的阶乘是： {0}&quot;, n.factorial(6));
+    Console.WriteLine(&quot;7 的阶乘是： {0}&quot;, n.factorial(7));
+    Console.WriteLine(&quot;8 的阶乘是： {0}&quot;, n.factorial(8));
+    Console.ReadLine();
+
+}
+ output:
+        720
+        5040
+        40320</code></pre><p>递归算法直接或者间接调用自身函数或者方法的算法(递归一定要有出口)</p>
+<p>对于复杂方案来说递归方便，但由于频繁使用调用栈可能会引起性能问题<br>1.会一直调用自己，直到满足条件<br>2.递归调用时会传递参数，每次调用都会将一个新的参数传递给自己，通常用于(阶乘，斐波拉切数列)<br>阶乘(!)是小于某个数的所有正整数的乘积;  0是整数不是负也不是正<br>说白了就是n(n-1),   n!=n*(n-1)!</p>
+<p>0!=1</p>
+<p>1!=1</p>
+<p>2!=2*1!=2      2x1</p>
+<p>3!=3*2!=6      3x2x1</p>
+<p>4!=4*3!=24     4x3x2x1</p>
+<p>5!=5*4!=120    5x4x3x2x1<br>上面例子可以简写成 if(n==0){<br>return 1;</p>
+<p>return num*factorial(num-1);<br>}</p>
+<p>n=0时返回1</p>
+<p>Fibonacci(斐波拉切数列)<br>1,1,2,3,5,8,13,21,34,55….<br>后一个数加上前面一个数<br>F0=0且F1=1  Fn=F(n-1)+F(n-2)</p>
+<p>比如5  F5=F4+F3  2+3=5</p>
+<pre><code>public long Fabinacci(int n){
+ if(n==0||n==1){
+    return n;
+               }
+ return Fabinacci(i-1)+Fabinacci(i-2)
+          ｝</code></pre><p>public void Func1(ref int num){</p>
+<p>　　if(num&lt;3){</p>
+<p>　　　　num++;</p>
+<p>　　　　Func2(ref num);</p>
+<p>　　　}</p>
+<p>}</p>
+<p>public void Func2(ref int num){</p>
+<p>　　if(num&lt;3){</p>
+<p>　　　　num++;</p>
+<p>　　　　Func3(ref num);</p>
+<p>　　　}</p>
+<p>}</p>
+<p>public void Func3(ref int num){</p>
+<p>　　if(num&lt;3){</p>
+<p>　　　　num++;</p>
+<p>　　　　Func4(ref num);</p>
+<p>　　　}</p>
+<p>}</p>
+<p>可以简写成<br>public void Func(ref int num){</p>
+<p>if(num&lt;3){</p>
+<p>　　num++;</p>
+<p>　　Func(ref num);　　</p>
+<p>　　}</p>
+<p>}</p>
 <hr>
-<p>值类型 ##由sytem.valuetype派生 </p>
-<pre><code>类型        描述                          范围                                                   默认值
-bool    布尔值                      True 或 False                                                False
-byte    8 位无符号整数             0 到 255                                                    0
-char    16 位 Unicode 字符          U +0000 到 U +ffff                                            &apos;\0&apos;
-decimal    128 位精确的十进制值，    28-29 有效位数    (-7.9 x 1028 到 7.9 x 1028) / 100 到 28         0.0M
-double    64 位双精度浮点型          (+/-)5.0 x 10-324 到 (+/-)1.7 x 10308                          0.0D
-float    32 位单精度浮点型          -3.4 x 1038 到 + 3.4 x 1038                                  0.0F
-int        32 位有符号整数类型         -2,147,483,648 到 2,147,483,647                               0
-long    64 位有符号整数类型         -9,223,372,036,854,775,808 到 9,223,372,036,854,775,807          0L
-sbyte    8 位有符号整数类型         -128 到 127                                                      0
-short    16 位有符号整数类型         -32,768 到 32,767                                              0
-uint    32 位无符号整数类型         0 到 4,294,967,295                                              0
-ulong    64 位无符号整数类型         0 到 18,446,744,073,709,551,615                                  0
-ushort    16 位无符号整数类型         0 到 65,535                                                      0</code></pre><hr>
-<p>引用类型指向是内存位置（object,dynamic,string）<br>对象（object类型）所有类型基类</p>
-<p>值类型转化为对象类型称为装箱，对象类型转化为值类型为拆箱<br>    object obj;<br>    obj = 100; // 装箱</p>
-<p>动态（Dynamic）类型</p>
-<p>字符串（string）</p>
-<pre><code>string str = @&quot;C:\Windows&quot;;
-string str = &quot;C:\\Windows&quot;;</code></pre><hr>
-<h2 id="指针类型（Pointer-types）（待补充）"><a href="#指针类型（Pointer-types）（待补充）" class="headerlink" title="指针类型（Pointer types）（待补充）"></a>指针类型（Pointer types）（待补充）</h2><p>指针类型变量存储另一种类型的内存地址 </p>
-<pre><code>type*identifier;
-例:
-char* cptr;
-int* iptr;</code></pre><hr>
-<p>隐式类型转换<br>显示类型转换</p>
-<pre><code>double d = 5673.74;
-int i;
+<ol>
+<li>参数传递包含（值参数，引用参数，输出参数）</li>
+<li>值传递:传递实参变量的一个副本(copy),所以方法体内的操作不会改变该变量</li>
+<li>引用传递:将实参变量直接传递给方法，方法体内的操作将改变该变量</li>
+<li>ref:能修改:调用之前先声明()，swap(ref int a,ref int b)</li>
+<li>out:必修改:调用之前可以不赋值，bool TryParse(string,out int)</li>
+</ol>
+<hr>
+<h2 id="按值传递参数"><a href="#按值传递参数" class="headerlink" title="按值传递参数"></a>按值传递参数</h2><p>在函数内改变了值，值也没有发生任何的变化<br>class NumberManipulator<br>   {<br>      public void swap(int x, int y)<br>      {<br>         int temp;</p>
+<pre><code>   temp = x; /* 保存 x 的值 */
+   x = y;    /* 把 y 赋值给 x */
+   y = temp; /* 把 temp 赋值给 y */
+}
 
-// 强制转换 double 为 int
-i = (int)d;
-Console.WriteLine(i);
-Console.ReadKey();
+static void Main(string[] args)
+{
+   NumberManipulator n = new NumberManipulator();
+   /* 局部变量定义 */
+   int a = 100;
+   int b = 200;
 
-output:5673</code></pre><p>类型转换</p>
-<pre><code>序号     方法 &amp; 描述
-1    ToBoolean
-如果可能的话，把类型转换为布尔型。
-2    ToByte
-把类型转换为字节类型。
-3    ToChar
-如果可能的话，把类型转换为单个 Unicode 字符类型。
-4    ToDateTime
-把类型（整数或字符串类型）转换为 日期-时间 结构。
-5    ToDecimal
-把浮点型或整数类型转换为十进制类型。
-6    ToDouble
-把类型转换为双精度浮点型。
-7    ToInt16
-把类型转换为 16 位整数类型。
-8    ToInt32
-把类型转换为 32 位整数类型。
-9    ToInt64
-把类型转换为 64 位整数类型。
-10    ToSbyte
-把类型转换为有符号字节类型。
-11    ToSingle
-把类型转换为小浮点数类型。
-12    ToString
-把类型转换为字符串类型。
-13    ToType
-把类型转换为指定类型。
-14    ToUInt16
-把类型转换为 16 位无符号整数类型。
-15    ToUInt32
-把类型转换为 32 位无符号整数类型。
-16    ToUInt64
-把类型转换为 64 位无符号整数类型。
+   Console.WriteLine(&quot;在交换之前，a 的值： {0}&quot;, a);
+   Console.WriteLine(&quot;在交换之前，b 的值： {0}&quot;, b);
 
+   /* 调用函数来交换值 */
+   n.swap(a, b);
 
-        int i = 75;
-        float f = 53.005f;
-        double d = 2345.7652;
-        bool b = true;
+   Console.WriteLine(&quot;在交换之后，a 的值： {0}&quot;, a);
+   Console.WriteLine(&quot;在交换之后，b 的值： {0}&quot;, b);
 
-        Console.WriteLine(i.ToString());
-        Console.WriteLine(f.ToString());
-        Console.WriteLine(d.ToString());
-        Console.WriteLine(b.ToString());
-        Console.ReadKey();
+   Console.ReadLine();
+   output:
+   在交换之前，a 的值：100
+   在交换之前，b 的值：200
+   在交换之后，a 的值：100
+   在交换之后，b 的值：200
+}</code></pre><p>   }</p>
+<hr>
+<h2 id="按引用传递参数"><a href="#按引用传递参数" class="headerlink" title="按引用传递参数"></a>按引用传递参数</h2><p>引用参数是对变量的内存位置的引用，不会创建一个新的存储位置，而值参数会创建，引用参数表示与提供给方法的实际参数具有相同的内存位置<br>使用ref声明引用参数</p>
+<pre><code>       class NumberManipulator
+  {
+  public void swap(ref int x, ref int y)
+  {
+     int temp;
 
-        output:
-        75
-        53.005
-        2345.7652
-        True</code></pre>
+     temp = x; /* 保存 x 的值 */
+     x = y;    /* 把 y 赋值给 x */
+     y = temp; /* 把 temp 赋值给 y */
+   }
+
+  static void Main(string[] args)
+  {
+     NumberManipulator n = new NumberManipulator();
+     /* 局部变量定义 */
+     int a = 100;
+     int b = 200;
+
+     Console.WriteLine(&quot;在交换之前，a 的值： {0}&quot;, a);
+     Console.WriteLine(&quot;在交换之前，b 的值： {0}&quot;, b);
+
+     /* 调用函数来交换值 */
+     n.swap(ref a, ref b);
+
+     Console.WriteLine(&quot;在交换之后，a 的值： {0}&quot;, a);
+     Console.WriteLine(&quot;在交换之后，b 的值： {0}&quot;, b);
+
+     Console.ReadLine();
+     output:
+     在交换之前，a 的值：100
+     在交换之前，b 的值：200
+     在交换之后，a 的值：200
+     在交换之后，b 的值：100
+
+  }
+}</code></pre><hr>
+<p>按输出传递参数</p>
+<p>return用来返回函数中一个值，以使用 输出参数 来从函数中返回两个值。输出参数会把方法输出的数据赋给自己，其他方面与引用参数相似。</p>
+<pre><code>    class NumberManipulator
+ {
+ public void getValue(out int x )
+ {
+    int temp = 5;
+    x = temp;
+ }
+
+ static void Main(string[] args)
+ {
+    NumberManipulator n = new NumberManipulator();
+    /* 局部变量定义 */
+    int a = 100;
+
+    Console.WriteLine(&quot;在方法调用之前，a 的值： {0}&quot;, a);
+
+    /* 调用函数来获取值 */
+    n.getValue(out a);
+
+    Console.WriteLine(&quot;在方法调用之后，a 的值： {0}&quot;, a);
+    Console.ReadLine();
+
+  }
+ }
+}
+output:
+在方法调用之前，a 的值： 100
+在方法调用之后，a 的值： 5</code></pre><p>提供给输出参数的变量不需要赋值。当需要从一个参数没有指定初始值的方法中返回值时，输出参数特别有用</p>
+<pre><code>  class NumberManipulator
+{
+ public void getValues(out int x, out int y )
+ {
+     Console.WriteLine(&quot;请输入第一个值： &quot;);
+     x = Convert.ToInt32(Console.ReadLine());
+     Console.WriteLine(&quot;请输入第二个值： &quot;);
+     y = Convert.ToInt32(Console.ReadLine());
+ }
+
+ static void Main(string[] args)
+ {
+    NumberManipulator n = new NumberManipulator();
+    /* 局部变量定义 */
+    int a , b;
+
+    /* 调用函数来获取值 */
+    n.getValues(out a, out b);
+
+    Console.WriteLine(&quot;在方法调用之后，a 的值： {0}&quot;, a);
+    Console.WriteLine(&quot;在方法调用之后，b 的值： {0}&quot;, b);
+    Console.ReadLine();
+ }
+}
+output:
+请输入第一个值：
+7
+请输入第二个值：
+8
+在方法调用之后，a 的值： 7
+在方法调用之后，b 的值： 8</code></pre>
       
     </div>
     
@@ -458,8 +592,8 @@ output:5673</code></pre><p>类型转换</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/09/Cconstant/" rel="next" title="C sharp（变量/常量/判断/循环）">
-                <i class="fa fa-chevron-left"></i> C sharp（变量/常量/判断/循环）
+              <a href="/2019/09/09/Csharpnet/" rel="next" title="C sharp net（值类型/值类型/指针)(指针请看单章)">
+                <i class="fa fa-chevron-left"></i> C sharp net（值类型/值类型/指针)(指针请看单章)
               </a>
             
           </div>
@@ -467,10 +601,6 @@ output:5673</code></pre><p>类型转换</p>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/13/csharp_methods/" rel="prev" title="csharp:方法（递归）">
-                csharp:方法（递归） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -604,7 +734,7 @@ output:5673</code></pre><p>类型转换</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#指针类型（Pointer-types）（待补充）"><span class="nav-number">1.</span> <span class="nav-text">指针类型（Pointer types）（待补充）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要先实例化类然后调用类中的方法进行比较然后传递给ret"><span class="nav-number">1.</span> <span class="nav-text">需要先实例化类然后调用类中的方法进行比较然后传递给ret</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按值传递参数"><span class="nav-number">2.</span> <span class="nav-text">按值传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按引用传递参数"><span class="nav-number">3.</span> <span class="nav-text">按引用传递参数</span></a></li></ol></div>
             
 
           </div>
