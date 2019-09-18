@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
+<meta name="description" content="?单问号用来对int,double和bool不能直接赋值为null的数据类型进行null的赋值 int? 1=3 和  Nullable i=new Nullable(3);是一样的 可空类型Nullable int? num1 = null; int? num2 = 45; double? num3 = new double?(); double? num4 = 3.14157;  bool?">
 <meta property="og:type" content="article">
-<meta property="og:title" content="csharp:方法（递归）">
-<meta property="og:url" content="http://yoursite.com/2019/09/13/csharp_methods/index.html">
+<meta property="og:title" content="Csharp(可空类型&#x2F;数组)（含指针具体看单章）">
+<meta property="og:url" content="http://yoursite.com/2019/09/18/CsharpArray/index.html">
 <meta property="og:site_name" content="Gamer World">
-<meta property="og:description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
+<meta property="og:description" content="?单问号用来对int,double和bool不能直接赋值为null的数据类型进行null的赋值 int? 1=3 和  Nullable i=new Nullable(3);是一样的 可空类型Nullable int? num1 = null; int? num2 = 45; double? num3 = new double?(); double? num4 = 3.14157;  bool?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-17T13:29:58.585Z">
+<meta property="og:updated_time" content="2019-09-18T14:17:04.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="csharp:方法（递归）">
-<meta name="twitter:description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
+<meta name="twitter:title" content="Csharp(可空类型&#x2F;数组)（含指针具体看单章）">
+<meta name="twitter:description" content="?单问号用来对int,double和bool不能直接赋值为null的数据类型进行null的赋值 int? 1=3 和  Nullable i=new Nullable(3);是一样的 可空类型Nullable int? num1 = null; int? num2 = 45; double? num3 = new double?(); double? num4 = 3.14157;  bool?">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/13/csharp_methods/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/18/CsharpArray/">
 
 
 
 
 
-  <title>csharp:方法（递归） | Gamer World</title>
+  <title>Csharp(可空类型/数组)（含指针具体看单章） | Gamer World</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/csharp_methods/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/18/CsharpArray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夜雨楼">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">csharp:方法（递归）</h1>
+          <h1 class="post-title" itemprop="name headline">Csharp(可空类型/数组)（含指针具体看单章）</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T15:16:16+08:00">
-                2019-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T20:19:14+08:00">
+                2019-09-18
               </time>
             
 
@@ -311,8 +311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/13/csharp_methods/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/13/csharp_methods/" itemprop="commentsCount"></span>
+                <a href="/2019/09/18/CsharpArray/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/18/CsharpArray/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -340,235 +340,341 @@
       
 
       
-        <pre><code>    public int FindMax(int num1, int num2)
+        <p>?单问号用来对int,double和bool不能直接赋值为null的数据类型进行null的赋值</p>
+<p>int? 1=3 和  Nullable<int> i=new Nullable<int>(3);是一样的</int></int></p>
+<p>可空类型Nullable</p>
+<pre><code>int? num1 = null;
+int? num2 = 45;
+double? num3 = new double?();
+double? num4 = 3.14157;
+
+bool? boolval = new bool?();
+
+Console.WriteLine(&quot;可空类型:{0},{1},{2},{3}&quot;,num1,num2,num3,num4);
+Console.WriteLine(&quot;可空的布尔值：{0}&quot;,boolval);
+Console.ReadLine();
+
+可以看到以上都能赋值为null</code></pre><p>？？合并运算符</p>
+<pre><code>double? num1 = null;
+double? num2 = 3.14157;
+double num3;
+
+num3 = num1 ?? 5.34;
+Console.WriteLine(&quot;num3的值是{0}&quot;,num3);
+num3 = num2 ?? 5.34;
+Console.WriteLine(&quot;num3的值是{0}&quot;,num3);
+Console.ReadLine();
+output:
+   5.34
+   3.14157
+ 如果第一个数的值为null，则返回的是第二个的值，要不然返回第一个值，第一个值为空所以返回之后赋值的5.34，第一个有值了就返回其第一个值</code></pre><hr>
+<p>数据(Array)<br>数组是存储相同类型固定大小的顺序集合，通过索引来访问具体某个值</p>
+<pre><code>double[] balance=new double[10];
+balance[0] =4500.0;
+存放doule类型的数组 balance 10个double类型（默认值为0）
+也可以声明时候同时数组赋值
+double[] blance={2340.0,4523.69,3421.0}
+也可以全部赋值好
+int[] marks=new int [5] {1,2,3,4,5}
+也可以省略数组大小
+int[] marks=new int [] {1,2,3,4,5}
+
+当默认int数组创建时它的默认值都初始化为0，也可以把数组赋值到另一个数组中，但是他指向相同的内存位置
+int[] marks =new int[] {1,2,3,4,5}
+int[] score =marks;</code></pre><hr>
+<pre><code>int[] n = new int[10];
+int i, j;
+
+for ( i = 0; i &lt; 10; i++)
 {
-   /* 局部变量声明 */
-   int result;
-
-   if (num1 &gt; num2)
-      result = num1;
-   else
-      result = num2;
-
-   return result;
+    n[i] = i + 100;
 }
-static void Main(string[] args)
+for ( j = 0; j &lt; 10; j++)
 {
-   /* 局部变量定义 */
-   int a = 100;
-   int b = 200;
-   int ret;
-   NumberManipulator n = new NumberManipulator();
-
-   //调用 FindMax 方法
-   ret = n.FindMax(a, b);
-   Console.WriteLine(&quot;最大值是： {0}&quot;, ret );
-   Console.ReadLine();
+    Console.WriteLine(&quot;数组[{0}]={1}&quot;,j,n[j]);
 }
-output:200</code></pre><p>方法也可以从另一个类调用</p>
-<h2 id="需要先实例化类然后调用类中的方法进行比较然后传递给ret"><a href="#需要先实例化类然后调用类中的方法进行比较然后传递给ret" class="headerlink" title="需要先实例化类然后调用类中的方法进行比较然后传递给ret"></a>需要先实例化类然后调用类中的方法进行比较然后传递给ret</h2><p>一个方法可以自己调用自己就是递归(乘阶就是从指定数1乘到本身，3（1<em>2</em>3）)<br>          class NumberManipulator<br>    {<br>        public int factorial(int num)<br>        {<br>            /* 局部变量定义 */<br>            int result;</p>
-<pre><code>    if (num == 1)
-    {
-        return 1;
-    }
-    else
-    {
-        result = factorial(num - 1) * num;
-        return result;
-    }
-}
+Console.ReadKey();
+output:
+  数组[0]=100
+  数组[1]=101
+  数组[2]=102
+  数组[3]=103
+  数组[4]=104
+  数组[5]=105
+  数组[6]=106
+  数组[7]=107
+  数组[8]=108
+  数组[9]=109</code></pre><hr>
+<p>C#支持多维数组 最简单的是二维数组</p>
+<pre><code>string[,] names;  二维数组
+int[, ,] m;  三维数组</code></pre><p>二维数组可以看成一个x和y列表格</p>
+<pre><code>      x0        x1       x2        x3
 
-static void Main(string[] args)
+y0  a[0][0]  a[0][1]   a[0][2]  a[0][3]
+
+y1  a[1][0]  a[1][1]   a[1][2]  a[1][3]
+
+y2  a[2][0]  a[2][1]   a[2][2]  a[2][3]</code></pre><p>初始化数组<br> 二维 a 数组<br>     int[,] a=new int [3,4]{<br>      {0,1,2,3},   初始化索引号为0的行<br>      {4,5,6,7},   初始化1<br>      {8,9,10,11}  初始化2<br>                    }</p>
+<pre><code>int val=a[2,3];
+把a数组的[2,3]值取出来赋给 val
+
+5行2列数组
+int[,] a=new int[5,2]{{0,0},{1,2},{2,4},{3,6},{4,8}};
+int i,j;
+
+输出数组每一个值
+      for (i = 0; i &lt; 5; i++)
+      {
+          for (j = 0; j &lt; 2; j++)
+          {
+              Console.WriteLine(&quot;a[{0},{1}] = {2}&quot;, i, j, a[i,j]);
+          }
+      }
+     Console.ReadKey();
+
+     output：
+     a[0,0]: 0
+     a[0,1]: 0
+     a[1,0]: 1
+     a[1,1]: 2
+     a[2,0]: 2
+     a[2,1]: 4
+     a[3,0]: 3
+     a[3,1]: 6
+     a[4,0]: 4
+     a[4,1]: 8</code></pre><hr>
+<p>交错数组<br>交错数组是数组的数组，是一维数组</p>
+<pre><code>int[][] scores;
+
+int[][]scores =new int [5][];
+for (int i = 0; i &lt; scores.Length; i++) 
 {
-    NumberManipulator n = new NumberManipulator();
-    //调用 factorial 方法
-    Console.WriteLine(&quot;6 的阶乘是： {0}&quot;, n.factorial(6));
-    Console.WriteLine(&quot;7 的阶乘是： {0}&quot;, n.factorial(7));
-    Console.WriteLine(&quot;8 的阶乘是： {0}&quot;, n.factorial(8));
-    Console.ReadLine();
-
-}
- output:
-        720
-        5040
-        40320</code></pre><p>递归算法直接或者间接调用自身函数或者方法的算法(递归一定要有出口)</p>
-<p>对于复杂方案来说递归方便，但由于频繁使用调用栈可能会引起性能问题<br>1.会一直调用自己，直到满足条件<br>2.递归调用时会传递参数，每次调用都会将一个新的参数传递给自己，通常用于(阶乘，斐波拉切数列)<br>阶乘(!)是小于某个数的所有正整数的乘积;  0是整数不是负也不是正<br>说白了就是n(n-1),   n!=n*(n-1)!</p>
-<p>0!=1</p>
-<p>1!=1</p>
-<p>2!=2*1!=2      2x1</p>
-<p>3!=3*2!=6      3x2x1</p>
-<p>4!=4*3!=24     4x3x2x1</p>
-<p>5!=5*4!=120    5x4x3x2x1<br>上面例子可以简写成 if(n==0){<br>return 1;</p>
-<p>return num*factorial(num-1);<br>}</p>
-<p>n=0时返回1</p>
-<p>Fibonacci(斐波拉切数列)<br>1,1,2,3,5,8,13,21,34,55….<br>后一个数加上前面一个数<br>F0=0且F1=1  Fn=F(n-1)+F(n-2)</p>
-<p>比如5  F5=F4+F3  2+3=5</p>
-<pre><code>public long Fabinacci(int n){
- if(n==0||n==1){
-    return n;
-               }
- return Fabinacci(i-1)+Fabinacci(i-2)
-          ｝</code></pre><p>public void Func1(ref int num){</p>
-<p>　　if(num&lt;3){</p>
-<p>　　　　num++;</p>
-<p>　　　　Func2(ref num);</p>
-<p>　　　}</p>
-<p>}</p>
-<p>public void Func2(ref int num){</p>
-<p>　　if(num&lt;3){</p>
-<p>　　　　num++;</p>
-<p>　　　　Func3(ref num);</p>
-<p>　　　}</p>
-<p>}</p>
-<p>public void Func3(ref int num){</p>
-<p>　　if(num&lt;3){</p>
-<p>　　　　num++;</p>
-<p>　　　　Func4(ref num);</p>
-<p>　　　}</p>
-<p>}</p>
-<p>可以简写成<br>public void Func(ref int num){</p>
-<p>if(num&lt;3){</p>
-<p>　　num++;</p>
-<p>　　Func(ref num);　　</p>
-<p>　　}</p>
-<p>}</p>
-<hr>
-<ol>
-<li>参数传递包含（值参数，引用参数，输出参数）</li>
-<li>值传递:传递实参变量的一个副本(copy),所以方法体内的操作不会改变该变量</li>
-<li>引用传递:将实参变量直接传递给方法，方法体内的操作将改变该变量</li>
-<li>ref:能修改:调用之前先声明()，swap(ref int a,ref int b)</li>
-<li>out:必修改:调用之前可以不赋值，bool TryParse(string,out int)</li>
-</ol>
-<hr>
-<h2 id="按值传递参数"><a href="#按值传递参数" class="headerlink" title="按值传递参数"></a>按值传递参数</h2><p>在函数内改变了值，值也没有发生任何的变化<br>class NumberManipulator<br>   {<br>      public void swap(int x, int y)<br>      {<br>         int temp;</p>
-<pre><code>   temp = x; /* 保存 x 的值 */
-   x = y;    /* 把 y 赋值给 x */
-   y = temp; /* 把 temp 赋值给 y */
+scores[i] = new int[4];
 }
 
-static void Main(string[] args)
-{
-   NumberManipulator n = new NumberManipulator();
-   /* 局部变量定义 */
-   int a = 100;
-   int b = 200;
+交错数组
+int[][] scores = new int[2][]{new int[]{92,93,94},new int[]{85,66,87,88}};
 
-   Console.WriteLine(&quot;在交换之前，a 的值： {0}&quot;, a);
-   Console.WriteLine(&quot;在交换之前，b 的值： {0}&quot;, b);
+scores是包含2个整型数组的数组  scores[0]是带3个整数的数组，scores[1]是带4个整数的数组</code></pre><hr>
+<pre><code>一个由 5 个 整数数组组成的交错数组
+int[][] a = new int[][] { new int[] { 0, 0 }, new int[] { 1, 2 },new int[] {2,4},new int[] {3,6},new int
+ [] {4,8} };
 
-   /* 调用函数来交换值 */
-   n.swap(a, b);
+ int i, j;
 
-   Console.WriteLine(&quot;在交换之后，a 的值： {0}&quot;, a);
-   Console.WriteLine(&quot;在交换之后，b 的值： {0}&quot;, b);
+ for (i = 0; i &lt; 5; i++)
+ {
+     for ( j = 0; j &lt; 2; j++)
+     {
+         Console.WriteLine(&quot;a[{0}][{1}]={2}&quot;,i,j,a[i][j]);
+     }
+ }
+ Console.ReadKey();
 
-   Console.ReadLine();
-   output:
-   在交换之前，a 的值：100
-   在交换之前，b 的值：200
-   在交换之后，a 的值：100
-   在交换之后，b 的值：200
-}</code></pre><p>   }</p>
-<hr>
-<h2 id="按引用传递参数"><a href="#按引用传递参数" class="headerlink" title="按引用传递参数"></a>按引用传递参数</h2><p>引用参数是对变量的内存位置的引用，不会创建一个新的存储位置，而值参数会创建，引用参数表示与提供给方法的实际参数具有相同的内存位置<br>使用ref声明引用参数</p>
-<pre><code>       class NumberManipulator
+ a[0][0] = 0
+ a[0][1] = 0
+ a[1][0] = 1
+ a[1][1] = 2
+ a[2][0] = 2
+ a[2][1] = 4
+ a[3][0] = 3 
+ a[3][1] = 6
+ a[4][0] = 4
+ a[4][1] = 8</code></pre><hr>
+<p>   (一维数组)交错数组和二维数组的区别，交错数组每一行的长度可以是不一样的  假设二维数组3，4 它每一行都是4，但交错数组可以不一样</p>
+<pre><code>int[][] a = new int[3][];
+a[0] = new int[] {1,2,3};
+a[1] = new int[] {4,5,6,7,8};
+a[2] = new int[] {9,10,11,12,13,14,15,16,17,18};       </code></pre><hr>
+<p>数组也可以传递给函数<br>不带索引的数据名称来给函数传递一个指向数组的指针</p>
+<pre><code>      class MyArray
+ {
+  double getAverage(int[] arr)
   {
-  public void swap(ref int x, ref int y)
-  {
-     int temp;
-
-     temp = x; /* 保存 x 的值 */
-     x = y;    /* 把 y 赋值给 x */
-     y = temp; /* 把 temp 赋值给 y */
-   }
-
+     int i;
+     double avg;
+     int sum = 0;
+     for (i = 0; i &lt; arr.Length; ++i)
+     {
+        sum += arr[i];
+     }
+     avg = (double)sum / arr.Length;
+     return avg;
+  }
   static void Main(string[] args)
   {
-     NumberManipulator n = new NumberManipulator();
-     /* 局部变量定义 */
-     int a = 100;
-     int b = 200;
-
-     Console.WriteLine(&quot;在交换之前，a 的值： {0}&quot;, a);
-     Console.WriteLine(&quot;在交换之前，b 的值： {0}&quot;, b);
-
-     /* 调用函数来交换值 */
-     n.swap(ref a, ref b);
-
-     Console.WriteLine(&quot;在交换之后，a 的值： {0}&quot;, a);
-     Console.WriteLine(&quot;在交换之后，b 的值： {0}&quot;, b);
-
-     Console.ReadLine();
-     output:
-     在交换之前，a 的值：100
-     在交换之前，b 的值：200
-     在交换之后，a 的值：200
-     在交换之后，b 的值：100
-
+     MyArray app = new MyArray();
+     /* 一个带有 5 个元素的 int 数组 */
+     int [] balance = new int[]{1000, 2, 3, 17, 50};
+     double avg;
+     /* 传递数组的指针作为参数 */
+     avg = app.getAverage(balance) ;
+     /* 输出返回值 */
+     Console.WriteLine( &quot;平均值是： {0} &quot;, avg );
+     Console.ReadKey();
   }
 }</code></pre><hr>
-<p>按输出传递参数</p>
-<p>return用来返回函数中一个值，以使用 输出参数 来从函数中返回两个值。输出参数会把方法输出的数据赋给自己，其他方面与引用参数相似。</p>
-<pre><code>    class NumberManipulator
- {
- public void getValue(out int x )
- {
-    int temp = 5;
-    x = temp;
- }
-
- static void Main(string[] args)
- {
-    NumberManipulator n = new NumberManipulator();
-    /* 局部变量定义 */
-    int a = 100;
-
-    Console.WriteLine(&quot;在方法调用之前，a 的值： {0}&quot;, a);
-
-    /* 调用函数来获取值 */
-    n.getValue(out a);
-
-    Console.WriteLine(&quot;在方法调用之后，a 的值： {0}&quot;, a);
-    Console.ReadLine();
-
-  }
- }
-}
-output:
-在方法调用之前，a 的值： 100
-在方法调用之后，a 的值： 5</code></pre><p>提供给输出参数的变量不需要赋值。当需要从一个参数没有指定初始值的方法中返回值时，输出参数特别有用</p>
-<pre><code>  class NumberManipulator
+<p>遍历可以用foreach简化</p>
+<pre><code> class MyArray
 {
- public void getValues(out int x, out int y )
+ double getAverage(int[] arr)
  {
-     Console.WriteLine(&quot;请输入第一个值： &quot;);
-     x = Convert.ToInt32(Console.ReadLine());
-     Console.WriteLine(&quot;请输入第二个值： &quot;);
-     y = Convert.ToInt32(Console.ReadLine());
- }
+    double avg;
+    int sum = 0;
 
+    foreach(int member in arr)
+    {
+       sum += member;
+    }
+
+    avg = (double)sum / arr.Length;
+    return avg;
+ }
  static void Main(string[] args)
  {
-    NumberManipulator n = new NumberManipulator();
-    /* 局部变量定义 */
-    int a , b;
+    MyArray app = new MyArray();
+    /* 一个带有 5 个元素的 int 数组 */
+    int [] balance = new int[]{1000, 2, 3, 17, 50};
+    double avg;
 
-    /* 调用函数来获取值 */
-    n.getValues(out a, out b);
+    /* 传递数组的指针作为参数 */
+    avg = app.getAverage(balance) ;
 
-    Console.WriteLine(&quot;在方法调用之后，a 的值： {0}&quot;, a);
-    Console.WriteLine(&quot;在方法调用之后，b 的值： {0}&quot;, b);
-    Console.ReadLine();
+    /* 输出返回值 */
+    Console.WriteLine( &quot;平均值是： {0} &quot;, avg );
+    Console.ReadKey();
  }
+}</code></pre><hr>
+<p>参数数组</p>
+<ul>
+<li>当声明方法时，不能确定要传递给函数作为参数的参数数目，用于传递未知数量的参数給函数</li>
+<li>params关键字</li>
+<li>public 返回类型  方法名称（params 类型名称[] 数组名称）</li>
+</ul>
+<hr>
+<pre><code>   class ParamArray
+ {
+ public int AddElements(params int[] arr)
+ {
+    int sum = 0;
+    foreach (int i in arr)
+    {
+       sum += i;
+    }
+    return sum;
+   }
+ }
+
+  class TestClass
+ {
+  static void Main(string[] args)
+  {
+    ParamArray app = new ParamArray();
+    int sum = app.AddElements(512, 720, 250, 567, 889);
+    Console.WriteLine(&quot;总和是： {0}&quot;, sum);
+    Console.ReadKey();
+  }
 }
+output: 2938
+
+main方法初始化 传递到上述方法内</code></pre><hr>
+<ol>
+<li>带 params 关键字的参数类型必须是一维数组，不能使用在多维数组上；</li>
+<li>不允许和 ref、out 同时使用；</li>
+<li>带 params 关键字的参数必须是最后一个参数，并且在方法声明中只允许一个 params 关键字。</li>
+<li>不能仅使用 params 来使用重载方法。</li>
+<li>没有 params 关键字的方法的优先级高于带有params关键字的方法的优先级</li>
+</ol>
+<h2 id="别人的笔记"><a href="#别人的笔记" class="headerlink" title="别人的笔记"></a>别人的笔记</h2><p>我们通常的入口函数 static void Main(string [] args) 就是用数组来作形参的，它实际可以写成 static void Main()，不需要参数的传入。同样使用数组作为形参，调用普通方法函数时，有无params是有区别的：</p>
+<p> 1.带params关键字的数组形参，既可以接受数组（直接传数组名，应该是地址），也可以接受多个和形参同类型的值（不是数组形式），如有方法 public int test (params int [] array), int [] a=new int [2] 作为数组时可以 test(a) 来调用，也可以 test(1,2,3,4) 来调用。<br> 2.不带params关键字的数组形参，如方法public int test (int [] array),不通过传值的方式调用，只能传数组的方式调用。<br>测试如下：（带params和不带params的方法只能存在一个，不能仅凭params来重载一个方法，故注释掉了一个，再测试时注释掉另一个。）</p>
+<pre><code>         class myclass1
+{
+    static void test(int a, int b)
+    {
+        Console.WriteLine(&quot;a+b= {0}&quot;, a + b);
+    }
+   /* static void test(int[] list)
+    {
+        foreach(int i in list)
+        {
+            Console.Write(&quot;-{0}&quot;,i);
+        }
+    }*/
+    static void test(params int[] list)
+    {
+        foreach (int i in list)
+        {
+            Console.Write(&quot;+{0}&quot;, i);
+        }
+    }
+    static void Main()
+    {
+        test(1, 2);
+        int[] a = new int[] { 1, 2, 3, 4, 5 };
+        test(a);
+        test(1, 23, 4, 5, 6);
+        Console.ReadKey();
+    }
+}</code></pre><p>以上所有的数组都是Array派生出去的，Array是所有数组的基类，在命名空间定义</p>
+<p>（Array）属性</p>
+<ol>
+<li>1    IsFixedSize</li>
+<li>获取一个值，该值指示数组是否带有固定大小。</li>
+<li>2    IsReadOnly</li>
+<li>获取一个值，该值指示数组是否只读。</li>
+<li>3    Length</li>
+<li>获取一个 32 位整数，该值表示所有维度的数组中的元素总数。</li>
+<li>4    LongLength</li>
+<li>获取一个 64 位整数，该值表示所有维度的数组中的元素总数。</li>
+<li>5    Rank</li>
+<li>获取数组的秩（维度）。</li>
+</ol>
+<p>具体的要看微软自家C#文档<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/addition-operator" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/addition-operator</a></p>
+<p>方法比如 </p>
+<p>ToSring<br>indexOf(Array,Object)  搜索对象然后返回第一次出现的索引<br>Sort(Array)            排序整个一维数组的元素<br>GetType                获取类型<br>GetLength              获取数组中元素总数 （是32位整数）<br>Clear                  让数组某个范围的元素为0，false或者null</p>
+<p>具体方法也是微软自家文档</p>
+<pre><code>     class MyArray
+{
+
+    static void Main(string[] args)
+    {
+        int[] list = { 34, 72, 13, 44, 25, 30, 10 };
+
+        Console.Write(&quot;原始数组： &quot;);
+        foreach (int i in list)
+        {
+            Console.Write(i + &quot; &quot;);
+        }
+        Console.WriteLine();
+
+        // 逆转数组
+        Array.Reverse(list);
+        Console.Write(&quot;逆转数组： &quot;);
+        foreach (int i in list)
+        {
+            Console.Write(i + &quot; &quot;);
+        }
+        Console.WriteLine();
+
+        // 排序数组
+        Array.Sort(list);
+        Console.Write(&quot;排序数组： &quot;);
+        foreach (int i in list)
+        {
+            Console.Write(i + &quot; &quot;);
+        }
+        Console.WriteLine();
+
+       Console.ReadKey();
+    }
+}
+
+
 output:
-请输入第一个值：
-7
-请输入第二个值：
-8
-在方法调用之后，a 的值： 7
-在方法调用之后，b 的值： 8</code></pre>
+原始数组： 34 72 13 44 25 30 10
+逆转数组： 10 30 25 44 13 72 34
+排序数组： 10 13 25 30 34 44 72</code></pre><p>指针还一知半解</p>
+
       
     </div>
     
@@ -592,8 +698,8 @@ output:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/09/Csharpnet/" rel="next" title="C sharp net（值类型/值类型/指针)(指针请看单章)">
-                <i class="fa fa-chevron-left"></i> C sharp net（值类型/值类型/指针)(指针请看单章)
+              <a href="/2019/09/13/csharp_methods/" rel="next" title="csharp:方法（递归）">
+                <i class="fa fa-chevron-left"></i> csharp:方法（递归）
               </a>
             
           </div>
@@ -601,10 +707,6 @@ output:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/18/CsharpArray/" rel="prev" title="Csharp(可空类型/数组)（含指针具体看单章）">
-                Csharp(可空类型/数组)（含指针具体看单章） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -738,7 +840,7 @@ output:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要先实例化类然后调用类中的方法进行比较然后传递给ret"><span class="nav-number">1.</span> <span class="nav-text">需要先实例化类然后调用类中的方法进行比较然后传递给ret</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按值传递参数"><span class="nav-number">2.</span> <span class="nav-text">按值传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按引用传递参数"><span class="nav-number">3.</span> <span class="nav-text">按引用传递参数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#别人的笔记"><span class="nav-number">1.</span> <span class="nav-text">别人的笔记</span></a></li></ol></div>
             
 
           </div>
