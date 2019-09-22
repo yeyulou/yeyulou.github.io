@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="18岁 想做游戏但困难重重,想着能触摸下也好想去看看,想着自己还年轻,学习学习再学习,My dream has just begun">
+<meta name="description" content="//字符串连接 string fname, lname; fname = &amp;quot;Rowan&amp;quot;; lname = &amp;quot;Atkinson&amp;quot;; string fullname = fname + lname; Console.WriteLine(&amp;quot;Full Name: {0}&amp;quot;, fullname);   //通过使用 string 构造函数 cha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Start">
-<meta property="og:url" content="http://yoursite.com/2019/09/03/Start/index.html">
+<meta property="og:title" content="csharp.String(字符串)和Struct(结构体)">
+<meta property="og:url" content="http://yoursite.com/2019/09/22/Csharpstringmd/index.html">
 <meta property="og:site_name" content="Gamer World">
-<meta property="og:description" content="18岁 想做游戏但困难重重,想着能触摸下也好想去看看,想着自己还年轻,学习学习再学习,My dream has just begun">
+<meta property="og:description" content="//字符串连接 string fname, lname; fname = &amp;quot;Rowan&amp;quot;; lname = &amp;quot;Atkinson&amp;quot;; string fullname = fname + lname; Console.WriteLine(&amp;quot;Full Name: {0}&amp;quot;, fullname);   //通过使用 string 构造函数 cha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-03T14:50:21.576Z">
+<meta property="og:updated_time" content="2019-09-22T10:46:17.013Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Start">
-<meta name="twitter:description" content="18岁 想做游戏但困难重重,想着能触摸下也好想去看看,想着自己还年轻,学习学习再学习,My dream has just begun">
+<meta name="twitter:title" content="csharp.String(字符串)和Struct(结构体)">
+<meta name="twitter:description" content="//字符串连接 string fname, lname; fname = &amp;quot;Rowan&amp;quot;; lname = &amp;quot;Atkinson&amp;quot;; string fullname = fname + lname; Console.WriteLine(&amp;quot;Full Name: {0}&amp;quot;, fullname);   //通过使用 string 构造函数 cha">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/03/Start/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/22/Csharpstringmd/">
 
 
 
 
 
-  <title>Start | Gamer World</title>
+  <title>csharp.String(字符串)和Struct(结构体) | Gamer World</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/Start/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/Csharpstringmd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夜雨楼">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Start</h1>
+          <h1 class="post-title" itemprop="name headline">csharp.String(字符串)和Struct(结构体)</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T22:30:31+08:00">
-                2019-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-22T15:54:22+08:00">
+                2019-09-22
               </time>
             
 
@@ -311,8 +311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/03/Start/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/03/Start/" itemprop="commentsCount"></span>
+                <a href="/2019/09/22/Csharpstringmd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/22/Csharpstringmd/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -340,9 +340,193 @@
       
 
       
-        <blockquote>
-<p>18岁 想做游戏但困难重重,想着能触摸下也好想去看看,想着自己还年轻,学习学习再学习,My dream has just begun</p>
-</blockquote>
+        <pre><code>//字符串连接
+string fname, lname;
+fname = &quot;Rowan&quot;;
+lname = &quot;Atkinson&quot;;
+string fullname = fname + lname;
+Console.WriteLine(&quot;Full Name: {0}&quot;, fullname);
+
+
+//通过使用 string 构造函数
+char[] letters = { &apos;H&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;,&apos;o&apos; };
+string greetings = new string(letters);
+Console.WriteLine(&quot;Greetings: {0}&quot;, greetings);
+
+
+//方法返回字符串
+string[] sarray = { &quot;Hello&quot;, &quot;From&quot;, &quot;Tutorials&quot;, &quot;Point&quot; };
+string message = String.Join(&quot; &quot;, sarray);
+Console.WriteLine(&quot;Message: {0}&quot;, message);
+
+//用于转化值的格式化方法
+DateTime waiting = new DateTime(2012, 10, 10, 17, 58, 1);
+string chat = String.Format(&quot;Message sent at {0:t} on {0:D}&quot;, 
+waiting);
+Console.WriteLine(&quot;Message: {0}&quot;, chat);
+Console.ReadKey() ;
+
+output:
+Full Name: RowanAtkinson//相加字符串
+Greetings: Hello//传递
+Message: Hello From Tutorials Point //join串联字符串数组的所有元素所以输出合起来
+Message: Message sent at 17:58 on 2012年10月10日//{0,t}和{0，d}  0和waiting</code></pre><p>String类有chars和length属性</p>
+<ol>
+<li><p>chars获取当前string对象中char的位置</p>
+</li>
+<li><p>length获取字符数</p>
+<pre><code>string str1 = &quot;This is test&quot;;
+string str2 = &quot;This is text&quot;;
+
+if (String.Compare(str1, str2) == 0)
+{
+   Console.WriteLine(str1 + &quot; and &quot; + str2 +  &quot; are equal.&quot;);
+}
+else
+{
+   Console.WriteLine(str1 + &quot; and &quot; + str2 + &quot; are not equal.&quot;);
+}
+Console.ReadKey() ;</code></pre></li>
+</ol>
+<hr>
+<pre><code>string str = &quot;This is test&quot;;
+if (str.Contains(&quot;test&quot;))
+{
+   Console.WriteLine(&quot;The sequence &apos;test&apos; was found.&quot;);
+}
+Console.ReadKey() ;
+output：The sequence &apos;test&apos; was found
+查看当前字符串是否包含值
+test存在于This is test 所以执行if语句内</code></pre><hr>
+<pre><code>string str = &quot;Last night I dreamt of Fan Pedro&quot;;
+Console.WriteLine(str);
+string substr = str.Substring(23);
+Console.WriteLine(substr);
+Console.ReadKey();
+output:
+Last night I dreamt of San Pedro
+San Pedro
+第一个输出字符串str第二个输出substr但从23输出如果是21则是 f fan Pedro</code></pre><hr>
+<p>连接字符串</p>
+<pre><code>string[] starray = new string[]{&quot;Down the way nights are dark&quot;,
+&quot;And the sun shines daily on the mountain top&quot;,
+&quot;I took a trip on a sailing ship&quot;,
+&quot;And when I reached Jamaica&quot;,
+&quot;I made a stop&quot;};
+
+string str = String.Join(&quot;\n&quot;, starray);
+Console.WriteLine(str);
+Console.ReadKey() ;
+output:
+Down the way nights are dark
+And the sun shines daily on the mountain top
+I took a trip on a sailing ship
+And when I reached Jamaica
+I made a stop
+join连接字符串然后换行显示</code></pre><hr>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><pre><code>       struct Books
+ {
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+ };  
+
+public class testStructure
+{
+  public static void Main(string[] args)
+ {
+
+  Books Book1;        /* 声明 Book1，类型为 Book */
+  Books Book2;        /* 声明 Book2，类型为 Book */
+
+  /* book 1 详述 */
+  Book1.title = &quot;C Programming&quot;;
+  Book1.author = &quot;Nuha Ali&quot;; 
+  Book1.subject = &quot;C Programming Tutorial&quot;;
+  Book1.book_id = 6495407;
+
+  /* book 2 详述 */
+  Book2.title = &quot;Telecom Billing&quot;;
+  Book2.author = &quot;Zara Ali&quot;;
+  Book2.subject =  &quot;Telecom Billing Tutorial&quot;;
+  Book2.book_id = 6495700;
+
+  /* 打印 Book1 信息 */
+  Console.WriteLine( &quot;Book 1 title : {0}&quot;, Book1.title);
+  Console.WriteLine(&quot;Book 1 author : {0}&quot;, Book1.author);
+  Console.WriteLine(&quot;Book 1 subject : {0}&quot;, Book1.subject);
+  Console.WriteLine(&quot;Book 1 book_id :{0}&quot;, Book1.book_id);
+
+  /* 打印 Book2 信息 */
+  Console.WriteLine(&quot;Book 2 title : {0}&quot;, Book2.title);
+  Console.WriteLine(&quot;Book 2 author : {0}&quot;, Book2.author);
+  Console.WriteLine(&quot;Book 2 subject : {0}&quot;, Book2.subject);
+  Console.WriteLine(&quot;Book 2 book_id : {0}&quot;, Book2.book_id);       
+
+  Console.ReadKey();
+
+ }
+
+ 输出
+ Book 1 title : C Programming
+ Book 1 author : Nuha Ali
+ Book 1 subject : C Programming Tutorial
+ Book 1 book_id : 6495407
+ Book 2 title : Telecom Billing
+ Book 2 author : Zara Ali
+ Book 2 subject : Telecom Billing Tutorial
+ Book 2 book_id : 6495700</code></pre><p>结构体是值类型数据结构而类是引用类型且结构不支持继承和声明默认的构造函数<br>结构可以有方法，字段，索引，属性，预算符方法和事件<br>不能做为其他结构和类的基础结构<br>可以实现一个或多个接口但其成员不能abstract，virtual和protected<br>可以不用new实例化但假如不实例化只有所有字段都被初始化后字段才能被赋值和使用<br>      private string title;<br>      private string author;<br>      private string subject;<br>      private int book_id;<br>      public void getValues(string t, string a, string s, int id)<br>      {<br>      title = t;<br>      author = a;<br>      subject = s;<br>      book_id =id;<br>      }<br>      public void display()<br>      {<br>      Console.WriteLine(“Title : {0}”, title);<br>      Console.WriteLine(“Author : {0}”, author);<br>      Console.WriteLine(“Subject : {0}”, subject);<br>      Console.WriteLine(“Book_id :{0}”, book_id);<br>      }</p>
+<pre><code>};  
+
+public class testStructure
+{
+public static void Main(string[] args)
+{
+
+Books Book1 = new Books(); /* 声明 Book1，类型为 Book */
+Books Book2 = new Books(); /* 声明 Book2，类型为 Book */
+
+/* book 1 详述 */
+Book1.getValues(&quot;C Programming&quot;,
+&quot;Nuha Ali&quot;, &quot;C Programming Tutorial&quot;,6495407);
+
+/* book 2 详述 */
+Book2.getValues(&quot;Telecom Billing&quot;,
+&quot;Zara Ali&quot;, &quot;Telecom Billing Tutorial&quot;, 6495700);
+
+/* 打印 Book1 信息 */
+Book1.display();
+
+/* 打印 Book2 信息 */
+Book2.display(); 
+
+Console.ReadKey();
+
+output:
+Title : C Programming
+Author : Nuha Ali
+Subject : C Programming Tutorial
+Book_id : 6495407
+Title : Telecom Billing
+Author : Zara Ali
+Subject : Telecom Billing Tutorial
+Book_id : 6495700</code></pre><p>结构体之前说到了不用new赋值<br>结构体在声明的字段的时候不能赋予初值但是类是可以的</p>
+<pre><code>struct test001
+{
+private int aa = 1;
+}
+编译器会报错
+class test002
+{
+private int aa = 1;
+}</code></pre><ol>
+<li>且结构体的构造函数中必须为所有字段赋值，类不用</li>
+<li>类的对象存储在堆空间中，</li>
+<li>结构体存在在栈空间中，堆空间大但访问速度慢，栈相反空间小速度快</li>
+<li>int double bool都是结构类型 类在堆空间分配空间，栈只是保存引用</li>
+</ol>
+<p>当堆栈空间有限时用类好点，矩形点和颜色声明一个含有许多颜色对象的数组，CLR(运行环境)需要为每个对象分配内存则结构更好</p>
 
       
     </div>
@@ -367,14 +551,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/09/18/CsharpArray/" rel="next" title="Csharp(可空类型/数组)（含指针具体看单章）">
+                <i class="fa fa-chevron-left"></i> Csharp(可空类型/数组)（含指针具体看单章）
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/05/C#operator/" rel="prev" title="C#运算符(operator) （尚有未完全理解）（已解决）">
-                C#运算符(operator) （尚有未完全理解）（已解决） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/22/CsharpEnum/" rel="prev" title="CsharpEnum(枚举)和Interface(接口)">
+                CsharpEnum(枚举)和Interface(接口) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -435,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -490,6 +687,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体"><span class="nav-number">1.</span> <span class="nav-text">结构体</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
