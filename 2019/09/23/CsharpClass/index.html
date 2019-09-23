@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="变量是供程序操作的存储区的名字 整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char 浮点型    float 和 double 十进制类型    decimal 布尔类型    true 或 false 值，指定的值 空类型    可为空值的数据类型C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量 常量是固定的不能">
+<meta name="description" content="class Box {    public double length;   // 长度    public double breadth;  // 宽度    public double height;   // 高度 } class Boxtester {     static void Main(string[] args)     {         Box Box1 = new Box(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C sharp（变量&#x2F;常量&#x2F;判断&#x2F;循环）">
-<meta property="og:url" content="http://yoursite.com/2019/09/09/Cconstant/index.html">
+<meta property="og:title" content="CsharpClass(类)和属性">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/CsharpClass/index.html">
 <meta property="og:site_name" content="Gamer World">
-<meta property="og:description" content="变量是供程序操作的存储区的名字 整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char 浮点型    float 和 double 十进制类型    decimal 布尔类型    true 或 false 值，指定的值 空类型    可为空值的数据类型C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量 常量是固定的不能">
+<meta property="og:description" content="class Box {    public double length;   // 长度    public double breadth;  // 宽度    public double height;   // 高度 } class Boxtester {     static void Main(string[] args)     {         Box Box1 = new Box(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-09T14:21:01.139Z">
+<meta property="og:updated_time" content="2019-09-23T15:04:14.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C sharp（变量&#x2F;常量&#x2F;判断&#x2F;循环）">
-<meta name="twitter:description" content="变量是供程序操作的存储区的名字 整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char 浮点型    float 和 double 十进制类型    decimal 布尔类型    true 或 false 值，指定的值 空类型    可为空值的数据类型C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量 常量是固定的不能">
+<meta name="twitter:title" content="CsharpClass(类)和属性">
+<meta name="twitter:description" content="class Box {    public double length;   // 长度    public double breadth;  // 宽度    public double height;   // 高度 } class Boxtester {     static void Main(string[] args)     {         Box Box1 = new Box(">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/09/Cconstant/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/23/CsharpClass/">
 
 
 
 
 
-  <title>C sharp（变量/常量/判断/循环） | Gamer World</title>
+  <title>CsharpClass(类)和属性 | Gamer World</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/Cconstant/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/CsharpClass/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夜雨楼">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C sharp（变量/常量/判断/循环）</h1>
+          <h1 class="post-title" itemprop="name headline">CsharpClass(类)和属性</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T21:46:31+08:00">
-                2019-09-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-23T22:19:42+08:00">
+                2019-09-23
               </time>
             
 
@@ -311,8 +311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/09/Cconstant/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/09/Cconstant/" itemprop="commentsCount"></span>
+                <a href="/2019/09/23/CsharpClass/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/23/CsharpClass/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -340,185 +340,317 @@
       
 
       
-        <p>变量是供程序操作的存储区的名字</p>
-<pre><code>整数类型    sbyte、byte、short、ushort、int、uint、long、ulong 和 char
-浮点型    float 和 double
-十进制类型    decimal
-布尔类型    true 或 false 值，指定的值
-空类型    可为空值的数据类型</code></pre><p>C#允许定义其他值类型的变量，比如enum,也允许定义引用类型变量</p>
-<p>常量是固定的不能变更，常量是可以任何数据类型</p>
-<pre><code> using System;
-
- public class ConstTest 
+        <pre><code>class Box
 {
-class SampleClass
+   public double length;   // 长度
+   public double breadth;  // 宽度
+   public double height;   // 高度
+}
+class Boxtester
 {
-    public int x;
-    public int y;
-    public const int c1 = 5;
-    public const int c2 = c1 + 5;
-
-    public SampleClass(int p1, int p2) 
+    static void Main(string[] args)
     {
-        x = p1; 
-        y = p2;
+        Box Box1 = new Box();        // 声明 Box1，类型为 Box
+        Box Box2 = new Box();        // 声明 Box2，类型为 Box
+        double volume = 0.0;         // 体积
+
+        // Box1 详述
+        Box1.height = 5.0;
+        Box1.length = 6.0;
+        Box1.breadth = 7.0;
+
+        // Box2 详述
+        Box2.height = 10.0;
+        Box2.length = 12.0;
+        Box2.breadth = 13.0;
+
+        // Box1 的体积
+        volume = Box1.height * Box1.length * Box1.breadth;
+        Console.WriteLine(&quot;Box1 的体积： {0}&quot;,  volume);
+
+        // Box2 的体积
+        volume = Box2.height * Box2.length * Box2.breadth;
+        Console.WriteLine(&quot;Box2 的体积： {0}&quot;, volume);
+        Console.ReadKey();
     }
 }
 
-static void Main()
+output：
+    210
+    1560</code></pre><p>类和之前提到的结构不一样，结构不能实例化内容而类可以</p>
+<hr>
+<pre><code>class Box
 {
-    SampleClass mC = new SampleClass(11, 22);
-    Console.WriteLine(&quot;x = {0}, y = {1}&quot;, mC.x, mC.y);
-    Console.WriteLine(&quot;c1 = {0}, c2 = {1}&quot;, 
-                      SampleClass.c1, SampleClass.c2);
-}
- }
- output:
-
- x = 11, y = 22
- c1 = 5, c2 = 10</code></pre><hr>
-<p>判断语句</p>
-<p>if else<br>if else if    else if   else</p>
-<p>当一个条件为真时其他不执行，最后一个所有条件都不满足执行</p>
-<pre><code>/* 局部变量定义 */
-      int a = 100;
-
-      /* 检查布尔条件 */
-      if (a == 10)
-      {
-          /* 如果 if 条件为真，则输出下面的语句 */
-          Console.WriteLine(&quot;a 的值是 10&quot;);
-      }
-      else if (a == 20)
-      {
-          /* 如果 else if 条件为真，则输出下面的语句 */
-          Console.WriteLine(&quot;a 的值是 20&quot;);
-      }
-      else if (a == 30)
-      {
-          /* 如果 else if 条件为真，则输出下面的语句 */
-          Console.WriteLine(&quot;a 的值是 30&quot;);
-      }
-      else
-      {
-          /* 如果上面条件都不为真，则输出下面的语句 */
-          Console.WriteLine(&quot;没有匹配的值&quot;);
-      }
-      Console.WriteLine(&quot;a 的准确值是 {0}&quot;, a);
-      Console.ReadLine();
-
-      output:
-      没有匹配的值
-      a 的准确值是 100</code></pre><hr>
-<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><pre><code>/* 局部变量定义 */
-char grade = &apos;B&apos;;
-
-switch (grade)
-{
-    case &apos;A&apos;:
-        Console.WriteLine(&quot;很棒！&quot;);
-        break;
-    case &apos;B&apos;:
-    case &apos;C&apos;:
-        Console.WriteLine(&quot;做得好&quot;);
-        break;
-    case &apos;D&apos;:
-        Console.WriteLine(&quot;您通过了&quot;);
-        break;
-    case &apos;F&apos;:
-        Console.WriteLine(&quot;最好再试一下&quot;);
-        break;
-    default:
-        Console.WriteLine(&quot;无效的成绩&quot;);
-        break;
-}
-Console.WriteLine(&quot;您的成绩是 {0}&quot;, grade);
-Console.ReadLine();
-output:
-做得好
-您的成绩是 B</code></pre><hr>
-<p>循环</p>
-<p>while循环<br>         /* 局部变量定义 */<br>            int a = 10;</p>
-<pre><code>/* while 循环执行 */
-while (a &lt; 20)
-{
-    Console.WriteLine(&quot;a 的值： {0}&quot;, a);
-    a++;
-}
-Console.ReadLine();
-output:
-a的值一直从10到19</code></pre><p>for循环</p>
-<pre><code>/* for 循环执行 */
-for (int a = 10; a &lt; 20; a = a + 1)
-{
-    Console.WriteLine(&quot;a 的值： {0}&quot;, a);
-}
-Console.ReadLine();
-a的值从10到19</code></pre><p>for循环一开始主体条件可以不用写 直接 for(;;)</p>
-<p>foreach<br>可以迭代数组或者集合对象</p>
-<pre><code>   int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
-   foreach (int element in fibarray)//依次迭代数组内的整型，迭代一次执行一次循环语句
+   private double length;   // 长度
+   private double breadth;  // 宽度
+   private double height;   // 高度
+   public void setLength( double len )
    {
-       System.Console.WriteLine(element);//每次循环需要执行的内容
+        length = len;
    }
-   System.Console.WriteLine();
 
-
-   // 类似 foreach 循环
-   for (int i = 0; i &lt; fibarray.Length; i++)//确定i的值
+   public void setBreadth( double bre )
    {
-       System.Console.WriteLine(fibarray[i]);//输出数组中第i个值
+        breadth = bre;
    }
-   System.Console.WriteLine();
 
-
-   // 设置集合中元素的计算器
-   int count = 0;
-   foreach (int element in fibarray)
+   public void setHeight( double hei )
    {
-       count += 1;
-       System.Console.WriteLine(&quot;Element #{0}: {1}&quot;, count, element);//count值反映了循环主体的执行次数，从1开始代表了数组中第一个整型，依次往后
+        height = hei;
    }
-   System.Console.WriteLine(&quot;Number of elements in the array: {0}&quot;, count);
+   public double getVolume()
+   {
+       return length * breadth * height;
+   }
+}
+class Boxtester
+{
+    static void Main(string[] args)
+    {
+        Box Box1 = new Box();        // 声明 Box1，类型为 Box
+        Box Box2 = new Box();                // 声明 Box2，类型为 Box
+        double volume;                               // 体积
 
+
+        // Box1 详述
+        Box1.setLength(6.0);
+        Box1.setBreadth(7.0);
+        Box1.setHeight(5.0);
+
+        // Box2 详述
+        Box2.setLength(12.0);
+        Box2.setBreadth(13.0);
+        Box2.setHeight(10.0);
+
+        // Box1 的体积
+        volume = Box1.getVolume();
+        Console.WriteLine(&quot;Box1 的体积： {0}&quot; ,volume);
+
+        // Box2 的体积
+        volume = Box2.getVolume();
+        Console.WriteLine(&quot;Box2 的体积： {0}&quot;, volume);
+
+        Console.ReadKey();
+    }
+}
    output:
-0
-1
-1
-2
-3
-5
-8
-13
-
-0
-1
-1
-2
-3
-5
-8
-13
-Element #1: 0
-Element #2: 1
-Element #3: 1
-Element #4: 2
-Element #5: 3
-Element #6: 5
-Element #7: 8
-Element #8: 13
-Number of elements in the array: 8</code></pre><p>do while循环 条件在结尾只有条件为假时才会停止</p>
-<pre><code>/* 局部变量定义 */
-int a = 10;
-
-/* do 循环执行 */
-do
+         210
+         1560</code></pre><p>成员变量能实现封装保持私有来达到安全性灵活性</p>
+<hr>
+<p>构造函数系统默认创建了一个无参无返回值的但可以带有参数的构造函数</p>
+<pre><code>class Line
 {
-   Console.WriteLine(&quot;a 的值： {0}&quot;, a);
-    a = a + 1;
-} while (a &lt; 20);
+  private double length;   // 线条的长度
+  public Line(double len)  // 参数化构造函数
+  {
+     Console.WriteLine(&quot;对象已创建，length = {0}&quot;, len);
+     length = len;
+  }
 
-Console.ReadLine();</code></pre>
+  public void setLength( double len )
+  {
+     length = len;
+  }
+  public double getLength()
+  {
+     return length;
+  }
+
+  static void Main(string[] args)
+  {
+     Line line = new Line(10.0);
+     Console.WriteLine(&quot;线条的长度： {0}&quot;, line.getLength()); 
+     // 设置线条长度
+     line.setLength(6.0);
+     Console.WriteLine(&quot;线条的长度： {0}&quot;, line.getLength()); 
+     Console.ReadKey();
+  }
+}
+
+output:
+对象已创建，length = 10
+线条的长度： 10
+线条的长度： 6</code></pre><hr>
+<pre><code>class TEST
+{
+    int Mjj;
+    public TEST()
+    {
+
+    }
+
+    public TEST(int JJ)
+    {
+        this.Mjj=JJ;
+    }
+
+    static void Main(string[] args)
+    {
+        TEST test = new TEST();
+        test.Mjj = 15;
+        Console.WriteLine(test.Mjj);
+        Console.ReadKey();
+    }
+
+}
+output: 15</code></pre><p>第一个无参构造函数，系统默认创建但也可以写出来，第二个有参构造函数</p>
+<hr>
+<pre><code>class test
+{
+    private int age;
+    private string name;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value;}
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set { age = value;}
+    }
+
+    static void Main(string[] args)
+    {
+        test Man=new test();
+        Man.Age = 15;
+        Man.Name = &quot;夜雨楼&quot;;
+        Console.WriteLine(Man.age);
+        Console.ReadKey();
+
+    }      
+}</code></pre><p>类的属性可以提供安全性和灵活性，set可以条件判断类外部不能直接访问赋值，</p>
+<pre><code>public int Code = {  Set{   _code = Value - 1  } }</code></pre><p>给属性赋值时，Code可以对变量_code进行运算后得到</p>
+<hr>
+<p>析构函数没有返回值和任何参数，用于释放资源和垃圾回收，</p>
+<pre><code>  class Line
+{
+ private double length;   // 线条的长度
+ public Line()  // 构造函数
+ {
+    Console.WriteLine(&quot;对象已创建&quot;);
+ }
+ ~Line() //析构函数
+ {
+    Console.WriteLine(&quot;对象已删除&quot;);
+ }
+
+ public void setLength( double len )
+ {
+    length = len;
+ }
+ public double getLength()
+ {
+    return length;
+ }
+
+ static void Main(string[] args)
+ {
+    Line line = new Line();
+    // 设置线条长度
+    line.setLength(6.0);
+    Console.WriteLine(&quot;线条的长度： {0}&quot;, line.getLength());           
+ }
+}
+
+output:
+       对象已创建
+       线条的长度： 6
+       对象已删除</code></pre><hr>
+<p>static把类成员定义为静态，定义常量，因为其可以通过直接调用类而不需要实例化来获取，静态成员变量可在成员函数或者类的定义外部进行初始化，也可以在内部</p>
+<pre><code>      class StaticVar
+{
+   public static int num;//定义静态成员num
+    public void count()count方法
+    {
+        num++;
+    }
+    public int getNum()返回num
+    {
+        return num;
+    }
+}
+class StaticTester
+{
+    static void Main(string[] args)
+    {
+        StaticVar s1 = new StaticVar();
+        StaticVar s2 = new StaticVar();
+        s1.count();
+        s1.count();
+        s1.count();
+        s2.count();
+        s2.count();
+        s2.count();         
+        Console.WriteLine(&quot;s1 的变量 num： {0}&quot;, s1.getNum());
+        Console.WriteLine(&quot;s2 的变量 num： {0}&quot;, s2.getNum());
+        Console.ReadKey();
+    }
+}
+output:
+s1的变量 num: 6
+s2的变量 num：6</code></pre><hr>
+<pre><code>      class StaticVar
+{
+   public static int num;
+    public void count()
+    {
+        num++;
+    }
+    public static int getNum()
+    {
+        return num;
+    }
+}
+class StaticTester
+{
+    static void Main(string[] args)
+    {
+        StaticVar s = new StaticVar();
+        s.count();
+        s.count();
+        s.count();                   
+        Console.WriteLine(&quot;变量 num： {0}&quot;, StaticVar.getNum());
+        Console.ReadKey();
+    }
+}
+output:
+      变量的 num: 3</code></pre><p>如果把成员函数声明为static，这样函数只能访问静态变量，静态函数在对象被创建之前就已经存在，</p>
+<hr>
+<pre><code>class test
+{
+    static void Main(string[] args)
+    {
+        int num = addclass.add(2, 3);//能直接调用
+        Console.WriteLine(num) ;
+    }
+
+
+    class addclass
+    {
+        public static int add(int x, int y)
+        {
+            return x + y;
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int num = Add(2, 3);  //编译错误，即使改为Program.Add(2, 3);也无法通过编译
+        Console.WriteLine(num);
+    }
+
+    public int Add(int x, int y)
+    {
+        return x + y;
+    }
+}</code></pre><p>类成员函数声明为public static无需实例化即可调用类成员函数<br>上诉如果不声明即使在Main在同一个类也必须实例化</p>
+
       
     </div>
     
@@ -542,8 +674,8 @@ Console.ReadLine();</code></pre>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/07/page/" rel="next" title="C sharp 布尔逻辑运算符和位移，按位求补">
-                <i class="fa fa-chevron-left"></i> C sharp 布尔逻辑运算符和位移，按位求补
+              <a href="/2019/09/22/CsharpEnum/" rel="next" title="CsharpEnum(枚举)和Interface(接口)">
+                <i class="fa fa-chevron-left"></i> CsharpEnum(枚举)和Interface(接口)
               </a>
             
           </div>
@@ -551,10 +683,6 @@ Console.ReadLine();</code></pre>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/09/Csharpnet/" rel="prev" title="C sharp net（值类型/值类型/指针)(指针请看单章)">
-                C sharp net（值类型/值类型/指针)(指针请看单章) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,17 +742,8 @@ Console.ReadLine();</code></pre>
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -678,22 +797,6 @@ Console.ReadLine();</code></pre>
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#switch语句"><span class="nav-number">1.</span> <span class="nav-text">switch语句</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
