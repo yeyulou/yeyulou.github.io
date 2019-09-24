@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
+<meta name="description" content="多态：一个接口多个功能。 静态多态性：编译时发生函数响应（调用）； 动态多态性：运行时发生函数响应。            class FatherClass {     public string name;     private int age;      public void Sayname(string s)     {         Console.WriteLine(&amp;quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="csharp:方法（递归）">
-<meta property="og:url" content="http://yoursite.com/2019/09/13/csharp_methods/index.html">
+<meta property="og:title" content="Csharp(继承)和多态，抽象">
+<meta property="og:url" content="http://yoursite.com/2019/09/24/CsharpObject/index.html">
 <meta property="og:site_name" content="Gamer World">
-<meta property="og:description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
+<meta property="og:description" content="多态：一个接口多个功能。 静态多态性：编译时发生函数响应（调用）； 动态多态性：运行时发生函数响应。            class FatherClass {     public string name;     private int age;      public void Sayname(string s)     {         Console.WriteLine(&amp;quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-17T13:29:58.585Z">
+<meta property="og:updated_time" content="2019-09-24T13:19:24.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="csharp:方法（递归）">
-<meta name="twitter:description" content="public int FindMax(int num1, int num2) {    /* 局部变量声明 */    int result;     if (num1 &amp;gt; num2)       result = num1;    else       result = num2;     return result; } static void Main(string[] arg">
+<meta name="twitter:title" content="Csharp(继承)和多态，抽象">
+<meta name="twitter:description" content="多态：一个接口多个功能。 静态多态性：编译时发生函数响应（调用）； 动态多态性：运行时发生函数响应。            class FatherClass {     public string name;     private int age;      public void Sayname(string s)     {         Console.WriteLine(&amp;quot;">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/13/csharp_methods/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/24/CsharpObject/">
 
 
 
 
 
-  <title>csharp:方法（递归） | Gamer World</title>
+  <title>Csharp(继承)和多态，抽象 | Gamer World</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/csharp_methods/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/CsharpObject/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="夜雨楼">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">csharp:方法（递归）</h1>
+          <h1 class="post-title" itemprop="name headline">Csharp(继承)和多态，抽象</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T15:16:16+08:00">
-                2019-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:08:58+08:00">
+                2019-09-24
               </time>
             
 
@@ -311,8 +311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/13/csharp_methods/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/13/csharp_methods/" itemprop="commentsCount"></span>
+                <a href="/2019/09/24/CsharpObject/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/09/24/CsharpObject/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -340,235 +340,390 @@
       
 
       
-        <pre><code>    public int FindMax(int num1, int num2)
+        <p>多态：一个接口多个功能。</p>
+<p>静态多态性：编译时发生函数响应（调用）；</p>
+<p>动态多态性：运行时发生函数响应。</p>
+<hr>
+<pre><code>          class FatherClass
 {
-   /* 局部变量声明 */
-   int result;
+    public string name;
+    private int age;
 
-   if (num1 &gt; num2)
-      result = num1;
-   else
-      result = num2;
-
-   return result;
-}
-static void Main(string[] args)
-{
-   /* 局部变量定义 */
-   int a = 100;
-   int b = 200;
-   int ret;
-   NumberManipulator n = new NumberManipulator();
-
-   //调用 FindMax 方法
-   ret = n.FindMax(a, b);
-   Console.WriteLine(&quot;最大值是： {0}&quot;, ret );
-   Console.ReadLine();
-}
-output:200</code></pre><p>方法也可以从另一个类调用</p>
-<h2 id="需要先实例化类然后调用类中的方法进行比较然后传递给ret"><a href="#需要先实例化类然后调用类中的方法进行比较然后传递给ret" class="headerlink" title="需要先实例化类然后调用类中的方法进行比较然后传递给ret"></a>需要先实例化类然后调用类中的方法进行比较然后传递给ret</h2><p>一个方法可以自己调用自己就是递归(乘阶就是从指定数1乘到本身，3（1<em>2</em>3）)<br>          class NumberManipulator<br>    {<br>        public int factorial(int num)<br>        {<br>            /* 局部变量定义 */<br>            int result;</p>
-<pre><code>    if (num == 1)
+    public void Sayname(string s)
     {
-        return 1;
+        Console.WriteLine(&quot;我的名字是:&quot;+s);
     }
-    else
+
+    public void Sayage(int a)
     {
-        result = factorial(num - 1) * num;
-        return result;
+        Console.WriteLine(&quot;我的年龄是:&quot;+a);
     }
+
+    public void Saysex(sex b)
+    {
+        Console.WriteLine(&quot;我的年龄是&quot;+sex.男);
+    }
+
 }
 
-static void Main(string[] args)
+
+class SonClass:FatherClass
 {
-    NumberManipulator n = new NumberManipulator();
-    //调用 factorial 方法
-    Console.WriteLine(&quot;6 的阶乘是： {0}&quot;, n.factorial(6));
-    Console.WriteLine(&quot;7 的阶乘是： {0}&quot;, n.factorial(7));
-    Console.WriteLine(&quot;8 的阶乘是： {0}&quot;, n.factorial(8));
-    Console.ReadLine();
+    public void SonSex(sex a)
+    {
+        Console.WriteLine(&quot;我的性别是&quot;+sex.男);
+    }
 
 }
- output:
-        720
-        5040
-        40320</code></pre><p>递归算法直接或者间接调用自身函数或者方法的算法(递归一定要有出口)</p>
-<p>对于复杂方案来说递归方便，但由于频繁使用调用栈可能会引起性能问题<br>1.会一直调用自己，直到满足条件<br>2.递归调用时会传递参数，每次调用都会将一个新的参数传递给自己，通常用于(阶乘，斐波拉切数列)<br>阶乘(!)是小于某个数的所有正整数的乘积;  0是整数不是负也不是正<br>说白了就是n(n-1),   n!=n*(n-1)!</p>
-<p>0!=1</p>
-<p>1!=1</p>
-<p>2!=2*1!=2      2x1</p>
-<p>3!=3*2!=6      3x2x1</p>
-<p>4!=4*3!=24     4x3x2x1</p>
-<p>5!=5*4!=120    5x4x3x2x1<br>上面例子可以简写成 if(n==0){<br>return 1;</p>
-<p>return num*factorial(num-1);<br>}</p>
-<p>n=0时返回1</p>
-<p>Fibonacci(斐波拉切数列)<br>1,1,2,3,5,8,13,21,34,55….<br>后一个数加上前面一个数<br>F0=0且F1=1  Fn=F(n-1)+F(n-2)</p>
-<p>比如5  F5=F4+F3  2+3=5</p>
-<pre><code>public long Fabinacci(int n){
- if(n==0||n==1){
-    return n;
-               }
- return Fabinacci(i-1)+Fabinacci(i-2)
-          ｝</code></pre><p>public void Func1(ref int num){</p>
-<p>　　if(num&lt;3){</p>
-<p>　　　　num++;</p>
-<p>　　　　Func2(ref num);</p>
-<p>　　　}</p>
-<p>}</p>
-<p>public void Func2(ref int num){</p>
-<p>　　if(num&lt;3){</p>
-<p>　　　　num++;</p>
-<p>　　　　Func3(ref num);</p>
-<p>　　　}</p>
-<p>}</p>
-<p>public void Func3(ref int num){</p>
-<p>　　if(num&lt;3){</p>
-<p>　　　　num++;</p>
-<p>　　　　Func4(ref num);</p>
-<p>　　　}</p>
-<p>}</p>
-<p>可以简写成<br>public void Func(ref int num){</p>
-<p>if(num&lt;3){</p>
-<p>　　num++;</p>
-<p>　　Func(ref num);　　</p>
-<p>　　}</p>
-<p>}</p>
-<hr>
-<ol>
-<li>参数传递包含（值参数，引用参数，输出参数）</li>
-<li>值传递:传递实参变量的一个副本(copy),所以方法体内的操作不会改变该变量</li>
-<li>引用传递:将实参变量直接传递给方法，方法体内的操作将改变该变量</li>
-<li>ref:能修改:调用之前先声明()，swap(ref int a,ref int b)</li>
-<li>out:必修改:调用之前可以不赋值，bool TryParse(string,out int)</li>
-</ol>
-<hr>
-<h2 id="按值传递参数"><a href="#按值传递参数" class="headerlink" title="按值传递参数"></a>按值传递参数</h2><p>在函数内改变了值，值也没有发生任何的变化<br>class NumberManipulator<br>   {<br>      public void swap(int x, int y)<br>      {<br>         int temp;</p>
-<pre><code>   temp = x; /* 保存 x 的值 */
-   x = y;    /* 把 y 赋值给 x */
-   y = temp; /* 把 temp 赋值给 y */
-}
 
-static void Main(string[] args)
+class test
 {
-   NumberManipulator n = new NumberManipulator();
-   /* 局部变量定义 */
-   int a = 100;
-   int b = 200;
+    static void Main(string[] args)
+    {
+        SonClass m_test = new SonClass();
 
-   Console.WriteLine(&quot;在交换之前，a 的值： {0}&quot;, a);
-   Console.WriteLine(&quot;在交换之前，b 的值： {0}&quot;, b);
+        m_test.Sayage(30);
+        m_test.Sayname(&quot;夜雨楼&quot;);
+        m_test.Saysex(sex.男);
+        m_test.SonSex(sex.男);
 
-   /* 调用函数来交换值 */
-   n.swap(a, b);
+        //m_test.name = &quot;父亲&quot;;
 
-   Console.WriteLine(&quot;在交换之后，a 的值： {0}&quot;, a);
-   Console.WriteLine(&quot;在交换之后，b 的值： {0}&quot;, b);
+        Console.ReadKey();
+    }
 
-   Console.ReadLine();
-   output:
-   在交换之前，a 的值：100
-   在交换之前，b 的值：200
-   在交换之后，a 的值：100
-   在交换之后，b 的值：200
-}</code></pre><p>   }</p>
+}
+
+
+
+enum sex
+{
+    男,
+    女,
+}</code></pre><p>派生类继承基类的成员和方法，也可以在派生类重写基类成员</p>
 <hr>
-<h2 id="按引用传递参数"><a href="#按引用传递参数" class="headerlink" title="按引用传递参数"></a>按引用传递参数</h2><p>引用参数是对变量的内存位置的引用，不会创建一个新的存储位置，而值参数会创建，引用参数表示与提供给方法的实际参数具有相同的内存位置<br>使用ref声明引用参数</p>
-<pre><code>       class NumberManipulator
+<pre><code> class test
+{
+  // 成员变量
+  protected double length;
+  protected double width;
+  public Rectangle(double l, double w)
   {
-  public void swap(ref int x, ref int y)
+     length = l;
+     width = w;
+  }
+  public double GetArea()
   {
-     int temp;
+     return length * width;
+  }
+  public void Display()
+  {
+     Console.WriteLine(&quot;长度： {0}&quot;, length);
+     Console.WriteLine(&quot;宽度： {0}&quot;, width);
+     Console.WriteLine(&quot;面积： {0}&quot;, GetArea());
+  }
+}//end class Rectangle  
+class Tabletop : Rectangle
+{
+  private double cost;
+  public Tabletop(double l, double w) : base(l, w)
+  { }
+  public double GetCost()
+  {
+     double cost;
+     cost = GetArea() * 70;
+     return cost;
+  }
+  public void Display()
+  {
+     base.Display();
+     Console.WriteLine(&quot;成本： {0}&quot;, GetCost());
+  }
+}
+class ExecuteRectangle
+{
+  static void Main(string[] args)
+  {
+     Tabletop t = new Tabletop(4.5, 7.5);
+     t.Display();
+     Console.ReadLine();
+  }
+}</code></pre><hr>
+<p>多重继承<br>C#不支持多重继承，但是可以用接口来实现多重继承</p>
+<pre><code> class Shape 
+{
+  public void setWidth(int w)
+  {
+     width = w;
+  }
+  public void setHeight(int h)
+  {
+     height = h;
+  }
+  protected int width;
+  protected int height;
+}
 
-     temp = x; /* 保存 x 的值 */
-     x = y;    /* 把 y 赋值给 x */
-     y = temp; /* 把 temp 赋值给 y */
-   }
+// 基类 PaintCost
+public interface PaintCost //接口PaintCost
+{
+  int getCost(int area);
+
+}
+// 派生类
+ class Rectangle : Shape, PaintCost
+{
+  public int getArea()
+  {
+     return (width * height);
+  }
+  public int getCost(int area)
+  {
+     return area * 70;
+  }
+}
+ class RectangleTester
+{
+  static void Main(string[] args)
+  {
+     Rectangle Rect = new Rectangle();
+     int area;
+     Rect.setWidth(5);
+     Rect.setHeight(7);
+     area = Rect.getArea();
+     // 打印对象的面积
+     Console.WriteLine(&quot;总面积： {0}&quot;,  Rect.getArea());
+     Console.WriteLine(&quot;油漆总成本： ${0}&quot; , Rect.getCost(area));
+     Console.ReadKey();
+  }
+}</code></pre><hr>
+<p>virtual 隐藏<br>override 重写</p>
+<p>new隐藏</p>
+<p>在子类中用override重写父类中用virtual声明的虚方法时，实例化父类调用该方法，执行时调用是子类中重写的方法</p>
+<p>如果子类用new 覆盖父类virtual声明的的虚方法时，实例化调用的是父类的虚方法</p>
+<pre><code>/// &lt;summary&gt;  
+/// 父类  
+/// &lt;/summary&gt;  
+public class ParentClass  
+{  
+
+public virtual void ParVirMethod()  
+{  
+   Console.WriteLine(&quot;父类的方法...&quot;);  
+}  
+}  
+
+/// &lt;summary&gt;  
+/// 子类1  
+/// &lt;/summary&gt;  
+public class ChildClass1 : ParentClass  
+{
+
+public override void ParVirMethod()  
+{  
+   Console.WriteLine(&quot;子类1的方法...&quot;);  
+}
+
+}  
+
+/// &lt;summary&gt;  
+/// 子类2  
+/// &lt;/summary&gt;  
+public class ChildClass2 : ParentClass  
+{
+
+public new void ParVirMethod()  
+{  
+   Console.WriteLine(&quot;子类2的方法...&quot;);  
+}  
+
+public void Test()  
+{  
+   Console.WriteLine(&quot;子类2的其他方法...&quot;);  
+}
+
+}
+
+output:
+       ParentClass par = new ChildClass1();  
+       par.ParVirMethod(); //结果：&quot;子类1的方法&quot;，调用子类的方法，实现了多态
+
+       par = new ChildClass2();  
+       par.ParVirMethod(); //结果：&quot;父类的方法&quot;，调用父类的方法，没有实现多态</code></pre><p>override是重写，基类的方法在派生类是抹去重写，调用的所以是子类方法，<br>new是将基类的方法在派生类隐藏起来，所以调用的是基类方法</p>
+<p>如果把上面子类2的new改为override调用的就是子类的方法，实现了多态</p>
+<p>假如父类是球类，子类1喜欢踢球，子类2也喜欢踢球，但一个可以是踢足球，另一个可以是打篮球，他们都是基于父类的方法进行重写变成子类的方法来实现，这就是多态</p>
+<p>假如要访问被隐藏的基类成员可以用base.关键字进行访问</p>
+<hr>
+<h2 id="静态多态性"><a href="#静态多态性" class="headerlink" title="静态多态性"></a>静态多态性</h2><p>函数重载和运算符重载</p>
+<pre><code>public class TestData  
+{  
+    public int Add(int a, int b, int c)  
+    {  
+        return a + b + c;  
+    }  
+    public int Add(int a, int b)  
+    {  
+        return a + b;  
+    }  
+}  
+class Program  
+{  
+    static void Main(string[] args)  
+    {  
+        TestData dataClass = new TestData();
+        int add1 = dataClass.Add(1, 2);  
+        int add2 = dataClass.Add(1, 2, 3);
+
+        Console.WriteLine(&quot;add1 :&quot; + add1);
+        Console.WriteLine(&quot;add2 :&quot; + add2);  
+    }  
+}</code></pre><hr>
+<pre><code>class Printdata
+{
+  void print(int i)
+  {
+     Console.WriteLine(&quot;输出整型: {0}&quot;, i );
+  }
+
+  void print(double f)
+  {
+     Console.WriteLine(&quot;输出浮点型: {0}&quot; , f);
+  }
+
+  void print(string s)
+  {
+     Console.WriteLine(&quot;输出字符串: {0}&quot;, s);
+  }
+  static void Main(string[] args)
+  {
+     Printdata p = new Printdata();
+     // 调用 print 来打印整数
+     p.print(1);
+     // 调用 print 来打印浮点数
+     p.print(1.23);
+     // 调用 print 来打印字符串
+     p.print(&quot;Hello Runoob&quot;);
+     Console.ReadKey();
+  }
+}
+输出整型: 1
+输出浮点型: 1.23
+输出字符串: Hello Runoob</code></pre><hr>
+<h2 id="动态多态性"><a href="#动态多态性" class="headerlink" title="动态多态性"></a>动态多态性</h2><p>abstract关键字创建抽象类，用于接口部分类的实现</p>
+<ul>
+<li>抽象类是抽象的不能创建实例</li>
+<li>不能在抽象类外部声明一个抽象方法</li>
+<li>sealed可以将类声明为密封类，不能被继承，抽象类不能被声明为sealed</li>
+</ul>
+<hr>
+<pre><code> abstract class Shape
+{
+   abstract public int area();
+}
+class Rectangle:  Shape
+{
+  private int length;
+  private int width;
+  public Rectangle( int a=0, int b=0)
+  {
+     length = a;
+     width = b;
+  }
+  public override int area ()
+  { 
+     Console.WriteLine(&quot;Rectangle 类的面积：&quot;);
+     return (width * length); 
+  }
+}
+
+class RectangleTester
+{
+  static void Main(string[] args)
+  {
+     Rectangle r = new Rectangle(10, 7);
+     double a = r.area();
+     Console.WriteLine(&quot;面积： {0}&quot;,a);
+     Console.ReadKey();
+  }
+}
+ Rectangle 类的面积：
+ 面积： 70</code></pre><hr>
+<pre><code> class Shape 
+{
+
+  protected int width, height;
+  public Shape( int a=0, int b=0)
+  {
+     width = a;
+     height = b;
+  }
+  public virtual int area()
+  {
+     Console.WriteLine(&quot;父类的面积：&quot;);
+     return 0;
+  }
+
+}
+class Rectangle: Shape
+{
+
+  public Rectangle( int a=0, int b=0): base(a, b)
+  {
+
+  }
+  public override int area ()
+  {
+     Console.WriteLine(&quot;Rectangle 类的面积：&quot;);
+     return (width * height); 
+  }
+
+}
+class Triangle: Shape
+{
+
+  public Triangle(int a = 0, int b = 0): base(a, b)
+  {
+
+  }
+  public override int area()
+  {
+     Console.WriteLine(&quot;Triangle 类的面积：&quot;);
+     return (width * height / 2); 
+  }
+
+}
+class Caller
+{
+
+  public void CallArea(Shape sh)
+  {
+     int a;
+     a = sh.area();
+     Console.WriteLine(&quot;面积： {0}&quot;, a);
+  }
+
+}  
+class Tester
+{
 
   static void Main(string[] args)
   {
-     NumberManipulator n = new NumberManipulator();
-     /* 局部变量定义 */
-     int a = 100;
-     int b = 200;
-
-     Console.WriteLine(&quot;在交换之前，a 的值： {0}&quot;, a);
-     Console.WriteLine(&quot;在交换之前，b 的值： {0}&quot;, b);
-
-     /* 调用函数来交换值 */
-     n.swap(ref a, ref b);
-
-     Console.WriteLine(&quot;在交换之后，a 的值： {0}&quot;, a);
-     Console.WriteLine(&quot;在交换之后，b 的值： {0}&quot;, b);
-
-     Console.ReadLine();
-     output:
-     在交换之前，a 的值：100
-     在交换之前，b 的值：200
-     在交换之后，a 的值：200
-     在交换之后，b 的值：100
-
+     Caller c = new Caller();
+     Rectangle r = new Rectangle(10, 7);
+     Triangle t = new Triangle(10, 5);
+     c.CallArea(r);
+     c.CallArea(t);
+     Console.ReadKey();
   }
-}</code></pre><hr>
-<p>按输出传递参数</p>
-<p>return用来返回函数中一个值，以使用 输出参数 来从函数中返回两个值。输出参数会把方法输出的数据赋给自己，其他方面与引用参数相似。</p>
-<pre><code>    class NumberManipulator
- {
- public void getValue(out int x )
- {
-    int temp = 5;
-    x = temp;
- }
 
- static void Main(string[] args)
- {
-    NumberManipulator n = new NumberManipulator();
-    /* 局部变量定义 */
-    int a = 100;
-
-    Console.WriteLine(&quot;在方法调用之前，a 的值： {0}&quot;, a);
-
-    /* 调用函数来获取值 */
-    n.getValue(out a);
-
-    Console.WriteLine(&quot;在方法调用之后，a 的值： {0}&quot;, a);
-    Console.ReadLine();
-
-  }
- }
 }
-output:
-在方法调用之前，a 的值： 100
-在方法调用之后，a 的值： 5</code></pre><p>提供给输出参数的变量不需要赋值。当需要从一个参数没有指定初始值的方法中返回值时，输出参数特别有用</p>
-<pre><code>  class NumberManipulator
-{
- public void getValues(out int x, out int y )
- {
-     Console.WriteLine(&quot;请输入第一个值： &quot;);
-     x = Convert.ToInt32(Console.ReadLine());
-     Console.WriteLine(&quot;请输入第二个值： &quot;);
-     y = Convert.ToInt32(Console.ReadLine());
- }
 
- static void Main(string[] args)
- {
-    NumberManipulator n = new NumberManipulator();
-    /* 局部变量定义 */
-    int a , b;
+ output:
+ Rectangle 类的面积：
+ 面积：70
+ Triangle 类的面积：
+ 面积：25</code></pre><p>在父类隐藏方法在子类override重写方法，以一个接口来实现多个功能，来实现不同的功能</p>
 
-    /* 调用函数来获取值 */
-    n.getValues(out a, out b);
-
-    Console.WriteLine(&quot;在方法调用之后，a 的值： {0}&quot;, a);
-    Console.WriteLine(&quot;在方法调用之后，b 的值： {0}&quot;, b);
-    Console.ReadLine();
- }
-}
-output:
-请输入第一个值：
-7
-请输入第二个值：
-8
-在方法调用之后，a 的值： 7
-在方法调用之后，b 的值： 8</code></pre>
       
     </div>
     
@@ -592,8 +747,8 @@ output:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/09/Csharpnet/" rel="next" title="C sharp net（值类型/值类型/指针)(指针请看单章)">
-                <i class="fa fa-chevron-left"></i> C sharp net（值类型/值类型/指针)(指针请看单章)
+              <a href="/2019/09/23/CsharpClass/" rel="next" title="CsharpClass(类)和属性">
+                <i class="fa fa-chevron-left"></i> CsharpClass(类)和属性
               </a>
             
           </div>
@@ -601,10 +756,6 @@ output:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/18/CsharpArray/" rel="prev" title="Csharp(可空类型/数组)（含指针具体看单章）">
-                Csharp(可空类型/数组)（含指针具体看单章） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -738,7 +889,7 @@ output:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要先实例化类然后调用类中的方法进行比较然后传递给ret"><span class="nav-number">1.</span> <span class="nav-text">需要先实例化类然后调用类中的方法进行比较然后传递给ret</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按值传递参数"><span class="nav-number">2.</span> <span class="nav-text">按值传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按引用传递参数"><span class="nav-number">3.</span> <span class="nav-text">按引用传递参数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态多态性"><span class="nav-number">1.</span> <span class="nav-text">静态多态性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态多态性"><span class="nav-number">2.</span> <span class="nav-text">动态多态性</span></a></li></ol></div>
             
 
           </div>
